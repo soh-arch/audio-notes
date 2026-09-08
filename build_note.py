@@ -2,6 +2,9 @@
 """Convert a Markdown audio-note script into the static HTML page format
 verified to work with Edge's Immersive Reader on iPhone.
 
+Reads the Markdown source from, and writes the generated HTML into,
+the notes/ directory.
+
 Usage:
     python3 build_note.py <slug>.md "<記事タイトル>"
 """
@@ -12,6 +15,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+NOTES_DIR = ROOT / "notes"
 TEMPLATE_PATH = ROOT / "note-template.html"
 
 
@@ -19,14 +23,14 @@ def main():
     if len(sys.argv) != 3:
         sys.exit("usage: python3 build_note.py <slug>.md \"<title>\"")
 
-    md_path = ROOT / sys.argv[1]
+    md_path = NOTES_DIR / sys.argv[1]
     title = sys.argv[2]
 
     if not md_path.exists():
         sys.exit(f"not found: {md_path}")
 
     slug = md_path.stem
-    html_path = ROOT / f"{slug}.html"
+    html_path = NOTES_DIR / f"{slug}.html"
 
     body_html = subprocess.run(
         ["pandoc", "--from=markdown", "--to=html", str(md_path)],
