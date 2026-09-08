@@ -32,9 +32,9 @@
    ```
 
 5. **SlackにURLを投稿する**
-   投稿先チャンネルは `.claude/notify.local.json` の `slackChannelId` に従う。このファイルは秘匿設定のため `.gitignore` でリポジトリへのコミット対象から外してある（公開リポジトリにワークスペース固有の情報を残さないため）。フォーマットは `.claude/notify.local.json.example` を参照する。
+   投稿先チャンネルは環境変数 `AUDIO_NOTES_SLACK_CHANNEL_ID` の値に従う。この値はワークスペース固有の情報のため、公開リポジトリのどのファイルにもコミットせず、実行環境（セッション/CI）の環境変数として渡す。
    このセッションで使えるSlack向けのツール・連携（Slack MCP、Incoming Webhookなど、環境にあるもの）を使って、そのチャンネルへ上記URLを短いメッセージと共に投稿する。例:「『<記事タイトル>』を公開しました: <URL>」
-   - `.claude/notify.local.json` が存在しない、または使えるSlack手段が見当たらない場合は、その旨と生成済みのURLを最終応答にはっきり書き、投稿だけは諦める。
+   - `AUDIO_NOTES_SLACK_CHANNEL_ID` が設定されていない、または使えるSlack手段が見当たらない場合は、その旨と生成済みのURLを最終応答にはっきり書き、投稿だけは諦める。
 
 ## 変更してはいけないもの
 
