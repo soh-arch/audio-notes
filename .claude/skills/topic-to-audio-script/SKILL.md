@@ -53,6 +53,7 @@ Convert your findings into the audio script under all constraints below.
 - **Bullets into prose.** Never output bullet symbols (•, *, -) or numbered-list markers. Convert them into flowing narrative using ordering phrases or "including both A and B."
 - **No inline markup.** Remove Markdown and formatting artifacts — `**bold**`, `_italics_`, backticks, footnote markers — since TTS engines either read them aloud or mispronounce the surrounding text. Convey emphasis through word choice and sentence position instead. The section headers specified under Output Format are the sole exception and must be kept.
 - **Transliterate foreign script into the reading script.** When the output language is Japanese, replace every Latin-alphabet word, product name, company name, personal name, place name, acronym, and technical term with its standard Japanese katakana reading, so that no Latin characters remain in the script. Write only the katakana form: never pair it with the original spelling in parentheses, in either order. Use the reading that is conventional in Japanese for that term; for acronyms normally spoken letter by letter, write the letter names in katakana (for example, エーピーアイ, ジーディーピー). If a term has no established Japanese reading, choose the pronunciation a Japanese speaker in the field would use and apply it consistently throughout the script.
+  The title heading is the sole exception: it is scanned with the eyes far more than it is heard, and an all-katakana title is hard to recognize at a glance, so Latin spellings are allowed there — including alongside the katakana reading, as in `# Appshots(アップショッツ)とは何か`. The rule applies without exception to the body.
 - **Charts and comparisons as narrative.** Render tables and "A vs. B" structures as top-to-bottom prose: state what is being compared, then each side's value, then the gap or ratio that matters.
 - **Numbers, units, and symbols.** Keep numerals in Arabic digits (1, 2, 3…) — do not convert them to kanji numerals (一, 二, 三…) or spell them out as words. Expand only the surrounding symbols into words: %, $, ±, ~, →, and ≒ become words; a range written as "2020–2024" becomes "2020年から2024年" (or the equivalent phrasing in the output language), not a dash; units are stated explicitly rather than abbreviated. The goal is unambiguous TTS reading of the symbol, not of the digit itself.
 - **Technical terms on first mention.** Give a short natural gloss in the same sentence the first time a specialized term appears, then use the term alone thereafter. The gloss is a spoken clarifying phrase, not a parenthetical.
@@ -67,7 +68,7 @@ Verify silently, and revise until all pass:
 1. Every fact, number, and qualifier from your research appears in the script.
 2. No sentence requires re-reading to parse; no sentence exceeds roughly two clauses.
 3. No bullet symbols, Markdown markup, bare URLs, citation brackets, or unexpanded symbols remain.
-4. No Latin-alphabet characters remain anywhere in a Japanese script, and no term appears in both transliterated and original spelling.
+4. No Latin-alphabet characters remain anywhere in the body of a Japanese script, and no term appears there in both transliterated and original spelling. The title heading is exempt from both.
 5. Every logical transition is signaled by an explicit connective.
 6. Nothing stated as fact is unsupported, and nothing uncertain is stated as settled.
 
@@ -75,5 +76,6 @@ Verify silently, and revise until all pass:
 
 **Output Format**
 - Output **only** the finished script. No preamble, no commentary, no research notes, no source list.
+- Open with a title heading in the form `# [Title]`, naming the subject in a short phrase. Latin spellings are allowed here even in a Japanese script — see the transliteration rule.
 - Mark transitions with simple section headers in the form `### [Section Name]`, using plain descriptive names.
 - Separate paragraphs with a blank line, keeping each paragraph to roughly three to five sentences so the engine's pauses fall at natural boundaries.
