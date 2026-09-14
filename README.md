@@ -14,6 +14,14 @@ https://soh-arch.github.io/audio-notes/notes/<slug>.html
 
 Edgeでページを開き、読み上げ（Immersive Reader）を起動すると、そのまま本文が読み上げられます。ページは装飾の少ない静的HTMLなので、本文以外のUIが読み上げに混ざりません。
 
+<p align="center">
+  <img src="docs/reading-view.jpg" alt="Edgeの読み上げ画面。読み上げ中の箇所がハイライトされている" width="280">
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/lock-screen.jpg" alt="ロック画面に表示された再生コントロール" width="280">
+</p>
+
+読み上げ中は、現在読んでいる箇所がハイライトされます（左）。再生・一時停止・段落の前後移動はロック画面やコントロールセンターからも操作できるので、画面を見ずに聞き続けられます（右）。
+
 ## ノートを作る
 
 通常はClaude Codeに「〇〇について調査してください」と依頼すると、Claude Codeが調査から公開・Slack通知までを一通り実行します。エージェントが従う手順は [`CLAUDE.md`](./CLAUDE.md) に書かれています。
@@ -49,6 +57,7 @@ python3 build_note.py <slug>.md
 - `note-template.html` — 生成されるページのテンプレート。
 - `CLAUDE.md` — Claude Codeが従う作業手順とルール（エージェント向け）。
 - `.claude/skills/` — 原稿作成に使うスキル（エージェント向け）。
+- `docs/` — READMEで使う説明用の画像。
 
 ## Slack通知
 
