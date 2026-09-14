@@ -1,4 +1,4 @@
-# AI開発の減速提言とAnthropic(アントロピック)、OpenAI(オープンエーアイ)、Muskの足並み
+# AI開発「減速」提言とAnthropic、OpenAI、Muskの足並み
 
 ### 概要
 
