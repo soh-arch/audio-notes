@@ -3,10 +3,11 @@
 verified to work with Edge's Immersive Reader on iPhone.
 
 Reads the Markdown source from, and writes the generated HTML into,
-the notes/ directory.
+the notes/ directory. The page title comes from the source's opening
+"# " heading, so a note carries exactly one title.
 
 Usage:
-    python3 build_note.py <slug>.md "<記事タイトル>"
+    python3 build_note.py <slug>.md
 """
 
 import re
@@ -19,15 +20,27 @@ NOTES_DIR = ROOT / "notes"
 TEMPLATE_PATH = ROOT / "note-template.html"
 
 
+def read_title(markdown):
+    for line in markdown.splitlines():
+        if not line.strip():
+            continue
+        heading = re.match(r"#\s+(\S.*)", line)
+        return heading.group(1).strip() if heading else None
+    return None
+
+
 def main():
-    if len(sys.argv) != 3:
-        sys.exit("usage: python3 build_note.py <slug>.md \"<title>\"")
+    if len(sys.argv) != 2:
+        sys.exit("usage: python3 build_note.py <slug>.md")
 
     md_path = NOTES_DIR / sys.argv[1]
-    title = sys.argv[2]
 
     if not md_path.exists():
         sys.exit(f"not found: {md_path}")
+
+    title = read_title(md_path.read_text(encoding="utf-8"))
+    if title is None:
+        sys.exit(f"no title: {md_path} must open with a '# ' heading")
 
     slug = md_path.stem
     html_path = NOTES_DIR / f"{slug}.html"
