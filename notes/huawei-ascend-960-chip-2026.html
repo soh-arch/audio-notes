@@ -1,0 +1,68 @@
+<title>Huaweiの次世代AIチップAscend 960前倒し投入</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/huawei-ascend-960-chip-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Huaweiの次世代AIチップAscend 960前倒し投入</h1>
+    <div class="doc">
+<p>この原稿では、中国の通信機器大手ファーウェイが2026年9月17日に上海で開催した年次イベント、ファーウェイ・コネクト2026で発表した、次世代のAI向け半導体アセンド960シリーズについて説明する。具体的には、投入時期の前倒しの内容、性能や仕様に関する情報、それを支える技術的な考え方、そして中国の半導体産業が置かれている輸出規制下の生産上の制約という順に述べる。なお、投入時期の前倒し幅など、報道によって細部の数字に食い違いがある点もあわせて指摘する。</p>
+<h3 id="発表の概要">発表の概要</h3>
+<p>ファーウェイの副会長でローテーション会長も務めるデイビッド・ワン氏は、ファーウェイ・コネクト2026の基調講演で、次世代のAI向け演算チップであるアセンド960ディーティーの投入時期を、2027年第1四半期に前倒しすると発表した。当初の計画では2027年の第4四半期、報道によっては第3四半期に投入するとされていたため、報道各社の伝え方によって、前倒し幅はおよそ半年から9か月程度と幅がある。続く派生モデルのアセンド960ピーアールは、2027年第3四半期に投入される予定である。</p>
+<p>ワン氏は、ファーウェイが今後、アセンドの新シリーズを1年に1世代というペースで投入していく方針を示した。具体的には、2028年にアセンド970を、2029年にアセンド980を投入する計画だという。ワン氏によれば、こうした急速な世代交代を支えるのが、自社が提唱する新しい半導体の性能向上則、タウ・スケーリング・ロー、日本語で言えばタウ尺度則である。この法則は2026年5月に発表されたもので、従来の微細化を前提とした性能向上の考え方に代わり、時間軸を尺度とする新しい指標を用いることで、演算性能の倍増に加え、メモリーの帯域幅や容量、チップ間の接続帯域幅なども大幅に改善できるとしている。</p>
+<h3 id="性能と仕様">性能と仕様</h3>
+<p>アセンド960シリーズは、前の世代である950シリーズと比べて演算性能が2倍になるとされている。加えて、ヒーエフ4と呼ばれる新しい演算精度の形式を導入し、ファーウェイが自社開発した高帯域幅メモリー、いわゆるエイチビーエムを144ギガバイト搭載するとの報道がある。ただし、こうした個別の仕様の数字については情報源ごとに細部の差異があり、確定した公式仕様として扱うにはなお注意が必要である。</p>
+<p>ファーウェイは、単体のチップ性能だけでなく、多数のチップを束ねる基盤技術にも力を入れている。同社が採用するユニファイドバスと呼ばれる相互接続の枠組みは、アセンドを使った演算クラスターであるスーパーポッド同士や、クンポンと呼ばれる別系統のプロセッサーを使ったスーパーポッド、さらにはキャッシュ用のストレージまでを、プロトコル変換の手間を減らしながらつなぐことを目的としている。ネットワークの構成としては、2段構成で4つの経路を持つクロスネットワークという方式を採用し、最大51万2000個のエヌピーユー、つまりAI向け演算処理装置を相互接続できるとされる。さらに、複数の経路を束ねる方式を使えば、最終的には100万個規模のエヌピーユーをつなぐ構想も示されている。アセンド960を使った1つのシステムは最大4096個のAI向け演算処理装置を接続でき、こうしたシステムを複数組み合わせることで、数十万個規模の演算処理装置からなるクラスターを構築するという。</p>
+<h3 id="需要と製造上の制約">需要と製造上の制約</h3>
+<p>ファーウェイは、AI向けチップの需要が自社の供給能力を上回っている状況にあると説明しており、今回の投入前倒しには、この需要の逼迫に対応する狙いがあるとみられる。一方で、性能面では前の世代のチップを上回るとされる一方、報道の中には、次世代のアセンドチップの一部の仕様が、置き換え対象となる従来モデルに比べて紙の上ではむしろ低くなっている部分があると指摘するものもあり、性能向上の中身については見方が分かれている。</p>
+<p>ファーウェイのチップ生産は、アメリカの輸出規制という大きな制約の下に置かれている。アセンド950シリーズおよび960シリーズの演算用チップは、中国の半導体受託生産大手エスエムアイシーのエヌプラススリーと呼ばれる製造プロセスで生産されている。先端的な露光装置に対する輸出規制により、エスエムアイシーは少なくとも2020年代の終わりまで、5ナノメートル相当より微細な回路を量産できない状態にあるとされる。さらに、2026年初めの時点で、台湾積体電路製造、いわゆるティーエスエムシーで過去に製造を委託していた在庫のダイはほぼ使い尽くされたとみられており、今後のアセンドの生産は、エスエムアイシー製のウエハーと国内での組み立て、そして中国の半導体メーカー、シーエックスエムティーが供給する高帯域幅メモリーに全面的に依存する見通しである。</p>
+<p>このシーエックスエムティーについては、2026年中の高帯域幅メモリーの生産量が約200万スタックにとどまると見込まれており、これはアセンド910シー相当のチップに換算するとおよそ25万個から30万個分の供給量にしかならない。エスエムアイシー自体は年間100万個を超えるチップ向けのダイを生産できる能力を持つとされるが、高帯域幅メモリーの国内供給がボトルネックとなり、海外から調達した高帯域幅メモリーの備蓄がない限り、実際の生産量は30万個未満に制約されるとみられている。</p>
+<h3 id="位置づけ">位置づけ</h3>
+<p>今回の発表は、アメリカの輸出規制によって最先端の画像処理半導体を事実上入手できない中国において、AI向け演算能力の自給自足体制を築こうとするファーウェイの取り組みの一環であり、演算性能そのものだけでなく、多数のチップを束ねる相互接続技術によってエヌビディアの大規模なAIクラスターに対抗しようとする姿勢を示すものである。ただし、高帯域幅メモリーの国内供給能力という物理的な制約が、投入時期の前倒しとは裏腹に、実際の量産規模を当面制限し続ける可能性が高いという点は、今後の展開を見るうえで留意すべき点である。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
