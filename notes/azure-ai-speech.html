@@ -1,0 +1,72 @@
+<title>Azure AI Speechとは何か</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/azure-ai-speech.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Azure AI Speechとは何か</h1>
+    <div class="doc">
+<h3 id="概要">概要</h3>
+<p>このノートでは、マイクロソフトが提供するクラウド型の音声処理サービス、アジュール・エーアイ・スピーチについて解説する。取り上げるのは、主要な機能と、利用方法、そして活用上の注意点である。</p>
+<p>アジュール・エーアイ・スピーチは、マイクロソフトのクラウド基盤アジュールの中で提供される音声関連のエーアイサービス群であり、以前はアジュール・コグニティブ・サービスの一部として提供されていたものが、2023年以降アジュール・エーアイ・サービスという名称に整理された経緯を持つ。</p>
+<h3 id="音声認識">音声認識</h3>
+<p>1つ目の機能は、音声をテキストに変換する音声認識、いわゆるスピーチ・トゥ・テキストである。マイクとリアルタイムに接続して文字起こしを行う方式と、録音済みの音声ファイルをまとめて処理するバッチ文字起こし方式の、両方に対応している。</p>
+<p>この音声認識には、会議の録音のように複数の話者が交互に話す音声から、発言ごとに話者を区別する話者分離という機能や、あらかじめ用意した候補の中から実際に話されている言語を自動で判定する言語識別という機能も組み合わせられる。さらに、専門用語や社名など特定の分野に出てくる単語を正しく認識できるよう、カスタム・スピーチという仕組みで、独自の語彙や音響モデルを追加学習させることも可能である。</p>
+<h3 id="音声合成">音声合成</h3>
+<p>2つ目の機能は、テキストを音声に変換する音声合成、いわゆるテキスト・トゥ・スピーチである。ニューラルネットワークを用いた自然な読み上げ音声、いわゆるニューラル音声があらかじめ多数用意されており、感情や話し方のスタイルを指定できる音声も一部存在する。読み上げの間の取り方や抑揚は、エスエスエムエルと呼ばれるマークアップ言語で細かく制御できる。</p>
+<p>これに加えて、特定の話者本人に似せた音声を作成するカスタム・ニューラル・ボイスという機能もある。ただし、この機能は声の悪用や偽の音声による詐欺を防ぐ目的で、マイクロソフトによる審査と、本人の同意確認を経た限定的な利用申請が必要となる。</p>
+<h3 id="音声翻訳と話者認識">音声翻訳と話者認識</h3>
+<p>3つ目の機能は音声翻訳であり、話された音声を別の言語のテキストや音声にリアルタイムで変換する。4つ目の機能は話者認識であり、声の特徴によって本人確認を行う話者照合や、複数話者の中から個人を特定する話者識別に利用される。このほか、語学学習者の発音の正確さや流暢さを採点する発音評価や、特定の呼びかけ語だけを検出するキーワード検出という機能も提供されている。</p>
+<h3 id="利用方法と活用事例">利用方法と活用事例</h3>
+<p>これらの機能は、ソフトウェア開発キット、いわゆるエスディーケーのほか、レスト形式のエーピーアイや、ブラウザ上で試せるスピーチ・スタジオという管理画面から呼び出せる。通常はクラウド上のサービスとして利用するが、通信環境や情報保持の制約が厳しい現場向けに、承認を受けた利用者に限りコンテナ形式でオンプレミス環境に配置する方法も用意されている。</p>
+<p>活用事例としては、コールセンターでの通話内容の文字起こし、会議アプリやプレゼンテーション資料のリアルタイム字幕表示、視覚障害者向けの読み上げ機能、音声アシスタントや電話自動応答システム、そして語学学習アプリでの発音練習などが挙げられる。</p>
+<h3 id="留意点">留意点</h3>
+<p>対応言語や音声の種類は継続的に追加されており、対応状況は時期によって変わる点に注意が必要である。また、認識精度はアクセントや背景雑音、専門用語の有無によって変動するため、実際の利用場面での事前検証が推奨される。</p>
+<p>料金体系は、無料枠と従量課金の有料枠に分かれており、有料枠では処理した音声の時間数や、合成した文字数に応じて課金される仕組みになっている。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
