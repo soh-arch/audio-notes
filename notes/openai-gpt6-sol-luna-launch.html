@@ -1,0 +1,75 @@
+<title>OpenAI、GPT-6 SolとLunaを発表</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/openai-gpt6-sol-luna-launch.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">OpenAI、GPT-6 SolとLunaを発表</h1>
+    <div class="doc">
+<h3 id="概要">概要</h3>
+<p>この原稿では、2026年9月22日にオープンエーアイが発表した新しいエーアイモデル、ジーピーティー6ソルとジーピーティー6ルナについて解説します。具体的には、値下げの内容、性能面での改善、利用できる範囲、そして今後の展望という4つの観点から取り上げます。</p>
+<h3 id="発表の背景">発表の背景</h3>
+<p>オープンエーアイは2026年9月22日、新モデルであるジーピーティー6ソルとジーピーティー6ルナを発表しました。これらは、同社の最上位モデルであるジーピーティー6アストラとは異なる位置づけのモデルです。ジーピーティー6アストラが最も要求の厳しい処理向けの旗艦モデルであるのに対し、ソルとルナはコストの低さと速度を重視したモデルとして設計されています。</p>
+<h3 id="価格">価格</h3>
+<p>まず価格について説明します。価格は、エーアイが文章を処理する際の単位であるトークンの数に応じて決まります。ジーピーティー6ソルは、複雑な作業向けのモデルです。価格は、入力トークン100万個あたり2ドル、出力トークン100万個あたり10ドルです。これは、前の世代であるジーピーティー5.6ソルの、入力4ドル、出力20ドルという価格から、ちょうど半額になります。</p>
+<p>一方、ジーピーティー6ルナは、大量の処理を高速にこなすためのモデルです。価格は、入力トークン100万個あたり0.10ドル、出力トークン100万個あたり0.50ドルです。これは、前の世代であるジーピーティー5.6ルナの、入力0.20ドル、出力1.20ドルと比べても、大幅な値下げとなります。重要な点として、オープンエーアイはこれらの価格が期間限定の販促価格ではなく、恒久的な価格であると説明しています。</p>
+<h3 id="性能">性能</h3>
+<p>次に、性能面での改善について、4つのベンチマーク、つまり評価基準の結果を紹介します。</p>
+<p>1つ目は、自律型のエーアイエージェントが実際の業務を代行できるかを測る、オートメーションベンチという評価基準です。ここでジーピーティー6ソルは、最も高い推論負荷の設定で33.2パーセントを記録しました。1件あたりのコストは0.27ドルです。比較対象であるクロード・オーパス5は26.9パーセントにとどまり、しかも1件あたりのコストはジーピーティー6ソルの約11倍でした。</p>
+<p>2つ目は、55種類の専門分野にまたがる高度な業務課題を集めた、エージェンツ・ラスト・エグザムという評価基準です。ジーピーティー6ソルはここで56.4パーセントを記録し、クロード・オーパス5が公表している最高スコアを、約60パーセント低いコストで上回りました。</p>
+<p>3つ目は、プログラミング能力を測る、ディープエスダブリューイー
+バージョン1.1という評価基準です。ジーピーティー6ソルは68.8パーセントを記録し、クロード・フェイブル5の69.9パーセントに迫るスコアを、約80パーセント低いコストで達成しました。また、より安価なジーピーティー6ルナも66.6パーセントを記録し、これはクロード・オーパス5に対して93パーセント、クロード・フェイブル5に対して96パーセント、それぞれ低いコストでの結果です。</p>
+<p>4つ目は、パソコン画面を認識し操作する能力を測る、オーエスワールド
+バージョン2.0という評価基準です。ジーピーティー6ソルは、最も高い推論負荷の設定で60.5パーセントを記録し、これはクロード・オーパス5に対して約80パーセント低いコストでの結果でした。さらに、ジーピーティー6ルナは、前の世代の上位モデルであるジーピーティー5.6ソルの性能を、その10分の1のコストで上回りました。</p>
+<p>性能面ではもう1つ、事実の正確さについても言及があります。オープンエーアイの社内評価によれば、ジーピーティー6ソルが事実に反する誤りを起こす頻度は、前の世代のジーピーティー5.6ソルのおよそ半分にまで減少しました。</p>
+<h3 id="利用できる範囲">利用できる範囲</h3>
+<p>利用範囲については、段階的な展開が進められています。ジーピーティー6ソルは、チャットジーピーティー・ワークおよびコーデックスにおいて、プラス、プロ、ビジネス、エンタープライズ、エデュの各プランの利用者が利用できます。ジーピーティー6ルナについても同様に提供される一方で、無料プランおよびゴープランの利用者に対しては、デスクトップアプリ経由での利用が可能です。エーピーアイ経由でも両モデルにアクセスでき、それぞれ専用の識別子を指定して呼び出す仕組みになっています。</p>
+<h3 id="今後の展望">今後の展望</h3>
+<p>最後に、今後の展望です。オープンエーアイは、9月29日にサンフランシスコで開催予定の年次イベント、デブデイを控えています。最高経営責任者のサム・アルトマン氏は、今回の発表を含め、異例に多い数の発表を予定していると述べています。同社はこの一連の動きを通じて、あらゆる価格帯とあらゆる形式において、最先端のエーアイモデルを提供するという方針を示しています。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
