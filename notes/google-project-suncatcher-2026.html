@@ -1,0 +1,67 @@
+<title>Google Project Suncatcher</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/google-project-suncatcher-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Google Project Suncatcher</h1>
+    <div class="doc">
+<h3 id="概要">概要</h3>
+<p>今回取り上げるのは、グーグルが進めている、人工衛星の上でAI向けの計算処理を行うという研究構想、プロジェクト・サンキャッチャーについてです。この構想の最初のハードウェア試験として、2026年10月1日に、グーグル製のAI向け演算チップを搭載した試験衛星が打ち上げられる予定になっています。以下では、この構想の全体像と、今回の打ち上げの具体的な内容、そして今後の展開について説明します。</p>
+<h3
+id="プロジェクトサンキャッチャーとは何か">プロジェクト・サンキャッチャーとは何か</h3>
+<p>プロジェクト・サンキャッチャーは、グーグルが2025年11月に発表した研究構想で、宇宙空間に多数の人工衛星を配置し、それらを連携させることで、地上のデータセンターに匹敵する計算能力を宇宙上に構築しようという、長期的な試みです。将来的には、1辺が1キロメートル規模に及ぶ範囲に、81機の人工衛星から成る集合体を編成し、大規模な演算クラスターとして機能させる構想が描かれています。</p>
+<p>宇宙空間で計算処理を行う利点として、地上と違って太陽光を遮る大気や昼夜の別がなく、より安定して太陽光発電による電力を得られる可能性があることや、地上のデータセンターが抱える土地や冷却水などの制約を受けにくいことが挙げられています。</p>
+<h3 id="今回の打ち上げの内容">今回の打ち上げの内容</h3>
+<p>今回の試験では、エムブイピーと呼ばれる、冷蔵庫ほどの大きさの試験衛星が使われます。この衛星には、グーグルが独自に開発しているAI向け演算チップ、テンソル・プロセッシング・ユニットの略称であるティーピーユーが、4基搭載されています。これは、おおよそデータセンターのサーバー1台分に相当する計算能力です。衛星の電力は、およそ1キロワットの太陽光パネルによってまかなわれます。</p>
+<p>打ち上げは、2026年10月1日に、スペースエックス社のファルコン9ロケットを使い、カリフォルニア州にあるヴァンデンバーグ宇宙軍基地から行われる予定です。この打ち上げは、トランスポーター18と呼ばれる、複数の顧客の衛星を相乗りさせる打ち上げ便を利用して実施されます。また、この試験にあたっては、衛星画像で知られるプラネット・ラボ社が、グーグルの提携先として協力しています。</p>
+<h3 id="試験の目的と今後の計画">試験の目的と今後の計画</h3>
+<p>今回の試験の主な目的は、AI向け演算チップが、打ち上げ時にかかる強い力や、低軌道上での放射線、そして真空環境での冷却といった、宇宙特有の過酷な条件に耐えられるかどうかを確認することです。あわせて、軌道上にある4基のティーピーユーを使って、グーグルの対話型AIであるジェミニへの短い問い合わせに対する応答を、15分程度のまとまった時間の中で処理させる実験も行われる予定です。</p>
+<p>グーグルは、今回のエムブイピー衛星による試験を経て、2027年初頭までに、プラネット・ラボ社と共同でさらに2機の衛星を打ち上げ、技術の検証を続けていく計画を示しています。今回の打ち上げは、あくまで81機規模の大規模構想に向けた最初の一歩であり、実際にその規模の宇宙演算クラスターが実現するまでには、なお長い年月と、多くの技術的な検証が必要になるとみられます。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
