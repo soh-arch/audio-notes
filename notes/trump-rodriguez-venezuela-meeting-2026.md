@@ -1,4 +1,4 @@
-# Trump-Rodriguez Venezuela Meeting
+# Trump氏とRodriguez氏、Maduro拘束後初の会談
 
 ### 概要
 

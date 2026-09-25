@@ -1,4 +1,4 @@
-# Netanyahu's UN Speech on Iran
+# Netanyahu首相、国連演説でIran体制崩壊を予測
 
 ### 概要
 

@@ -1,4 +1,4 @@
-# Google Project Suncatcher
+# Google、AI衛星計算構想Project Suncatcher始動
 
 ### 概要
 
