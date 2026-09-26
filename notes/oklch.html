@@ -1,0 +1,81 @@
+<title>OKLCHとは何か</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/oklch.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">OKLCHとは何か</h1>
+    <div class="doc">
+<h3 id="概要">概要</h3>
+<p>このノートでは、色の表し方の一つであるオーケーエルシーエイチを取り上げます。内容は4つです。第1に、従来の色の指定方法が抱えていた問題です。第2に、オーケーエルシーエイチの土台となったオーケーラボという色空間の成り立ちです。第3に、オーケーエルシーエイチの3つの値の意味です。第4に、ウェブでの対応状況と、使う上での注意点です。</p>
+<h3 id="従来の色指定の問題">従来の色指定の問題</h3>
+<p>ウェブで色を指定する方法として、長く使われてきたのはアールジービーとエイチエスエルです。アールジービーは、赤、緑、青の光の量で色を表します。エイチエスエルは、色相、彩度、明度という、人間にとって直感的な軸で色を表す方式です。</p>
+<p>しかし、エイチエスエルには大きな問題があります。それは、エイチエスエルの明度が、人間の目に見える明るさと一致しないことです。具体的には、明度を同じ50パーセントにしても、黄色はとても明るく見え、青はかなり暗く見えます。したがって、色相だけを変えて配色を作ると、明るさがばらばらになります。これは、文字と背景のコントラストを揃えたいときに特に困る点です。</p>
+<p>この問題の原因は、エイチエスエルがアールジービーの数値を単純に変形しただけのものだからです。つまり、人間の色の知覚を測ったデータに基づいていません。</p>
+<h3 id="オーケーラボの成り立ち">オーケーラボの成り立ち</h3>
+<p>人間の知覚に合わせた色空間、いわゆる知覚的均等色空間は、以前から存在しました。代表例は、1976年に国際照明委員会が定めたシーアイイーラボです。ただし、シーアイイーラボにも弱点があります。特に知られているのは、青の彩度を変えると、色相が紫の方へずれて見えるという現象です。</p>
+<p>この弱点を改善するために作られたのがオーケーラボです。オーケーラボは、スウェーデンのプログラマー、ビョルン・オットソンが2020年12月に自身のブログで発表しました。オットソンは、より精密な色の見え方のモデルであるシーエーエム16などのデータに近づくよう、計算式を最適化しました。その一方で、計算は行列の掛け算と3乗根だけで済むほど単純に保たれています。この「精度と単純さの両立」が、急速に普及した理由の一つです。</p>
+<p>なお、オーケーラボは完全な色空間ではありません。オットソン自身も、あらゆる条件で知覚と一致するわけではないと説明しています。あくまで、実用上の扱いやすさと精度のバランスを取った設計です。</p>
+<h3
+id="オーケーエルシーエイチの3つの値">オーケーエルシーエイチの3つの値</h3>
+<p>オーケーエルシーエイチは、オーケーラボを極座標、つまり角度と距離で表し直したものです。値は3つあります。</p>
+<p>第1に、エルは知覚上の明るさです。0が黒、1、つまり100パーセントが白を表します。重要な点は、このエルが実際に見える明るさに近いことです。したがって、エルを揃えれば、色相が違っても同じくらいの明るさに見えます。</p>
+<p>第2に、シーは彩度、正確にはクロマと呼ばれる色の鮮やかさです。0が無彩色、つまり灰色です。上限は決まっておらず、色相と明るさによって表示できる最大値が変わります。実用上は、おおむね0.4未満の値が使われます。</p>
+<p>第3に、エイチは色相で、0度から360度の角度で表します。おおよそ、30度付近が赤、140度付近が緑、260度付近が青にあたります。ただし、この角度はエイチエスエルの色相の角度とは一致しないので、置き換える際には注意が必要です。</p>
+<p>これらの性質から、オーケーエルシーエイチは配色の設計に向いています。例えば、エルとシーを固定してエイチだけを回せば、明るさと鮮やかさの揃った色の組が作れます。また、エルだけを段階的に変えれば、濃淡の揃ったカラーパレットが作れます。</p>
+<h3 id="ウェブでの対応状況">ウェブでの対応状況</h3>
+<p>オーケーエルシーエイチは、シーエスエスの色の仕様であるシーエスエス・カラー・モジュール・レベル4に、オーケーエルシーエイチ関数として含まれています。主要ブラウザの対応は次のとおりです。サファリは2022年3月のバージョン15.4で対応しました。クロームは2023年3月のバージョン111で対応しました。ファイアフォックスは2023年5月のバージョン113で対応しました。したがって、2023年以降、主要ブラウザのすべてで利用できる状態にあります。</p>
+<p>実際の採用例もあります。代表的なのは、シーエスエスフレームワークのテイルウィンド・シーエスエスです。2025年1月に公開されたバージョン4では、標準のカラーパレットがオーケーエルシーエイチで定義し直されました。</p>
+<p>加えて、相対色構文と呼ばれる機能とも相性が良いです。相対色構文とは、既存の色を基にして、一部の値だけを変えた新しい色を作る書き方です。オーケーエルシーエイチと組み合わせると、例えば「元の色のエルだけを少し下げる」といった操作で、ホバー時の色などを簡単に作れます。</p>
+<h3 id="色域についての注意点">色域についての注意点</h3>
+<p>オーケーエルシーエイチを使う上で、最も注意すべき点は色域です。色域とは、ディスプレイが表示できる色の範囲のことです。オーケーエルシーエイチでは、一般的なディスプレイの標準であるエスアールジービーの範囲を超える色も書けてしまいます。</p>
+<p>この性質は利点でもあり、欠点でもあります。利点としては、より広い色域を持つディスプレイピースリーなどの画面で、鮮やかな色を活かせることです。一方で欠点としては、表示できない色を指定した場合、ブラウザが表示可能な範囲に色を寄せる処理を行うことです。この処理は色域マッピングと呼ばれます。色域マッピングの方法は、仕様上の議論やブラウザの実装が変化してきた経緯があり、結果の見え方が環境によって異なる可能性があります。そのため、確実な表示を求める場合は、シーの値を控えめにして、エスアールジービーの範囲に収めるのが安全です。</p>
+<h3 id="まとめ">まとめ</h3>
+<p>オーケーエルシーエイチは、明るさ、鮮やかさ、色相という3つの値で色を表す方式です。最大の特徴は、明るさの値が人間の見え方に近いことです。この特徴によって、エイチエスエルでは難しかった、明るさの揃った配色が作りやすくなります。現在は主要ブラウザのすべてで使え、大手フレームワークでも採用が進んでいます。ただし、知覚との一致は完全ではないこと、そして表示できない色が指定できてしまうことの2点には注意が必要です。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
