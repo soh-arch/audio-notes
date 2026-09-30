@@ -1,0 +1,78 @@
+<title>America.gov</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/america-gov.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">America.gov</h1>
+    <div class="doc">
+<h3 id="全体像">全体像</h3>
+<p>このノートでは、アメリカ政府のウェブサイト「アメリカ・ドット・ガブ」を扱います。内容は3つです。まず、2026年9月29日に始まった新しいサイトの概要。次に、その仕組みと、公表されている計画。最後に、懸念点と、同じ名前で過去に存在した別のサイトです。情報は発表直後の報道に基づいており、詳細は今後変わる可能性があります。</p>
+<h3 id="新しいサイトの概要">新しいサイトの概要</h3>
+<p>アメリカ・ドット・ガブは、2026年9月29日火曜日に、ドナルド・トランプ大統領が発表したサイトです。発表はワシントンのメロン講堂で行われたと報じられています。報道によると、大統領令によってサイトが位置づけられました。発表の場には、マルコ・ルビオ国務長官と、ショーン・ダフィー運輸長官も加わりました。</p>
+<p>サイトの目的は、連邦政府のサービスへの入り口を1つにまとめることです。利用者は、複数の省庁のサイトをたどる代わりに、普通の言葉で質問します。すると、チャットボットが答え、必要な公式サイトへ案内します。チャットボットとは、人と会話する形で応答するプログラムのことです。</p>
+<p>設計を率いたのは、ジョー・ゲビアです。ゲビアは民泊仲介サービス、エアビーアンドビーの共同創業者で、現在はアメリカの最高デザイン責任者を務めています。ゲビアが率いる組織は、ナショナル・デザイン・スタジオです。トランプ大統領が2025年8月に設けた組織で、連邦政府のサイトやデジタルサービスの刷新を担当します。ゲビアは、利用者が二度と迷路に戻らずに済む体験を目指すと語ったと報じられています。</p>
+<h3 id="仕組み">仕組み</h3>
+<p>技術面では、複数の人工知能が使われていると報じられています。具体的には、グーグルのジェミニと、イーロン・マスク氏のエックスエーアイが開発したグロックです。これは複数の報道で一致しています。</p>
+<p>サイトは、数十の省庁のサイトの情報をまとめる形を取ります。また、連邦政府の共通ログインの仕組みである、ログイン・ドット・ガブを取り込みます。対象は、年間10万件を超える利用があるサービスだと報じられています。ただし、国税庁の業務と、国家安全保障に関わる機能は含まれません。</p>
+<p>個人情報の扱いについて、政府側は次のように説明しています。サイト自体は利用者の情報を保存しません。記録は、たとえばメディケアなど、それぞれの担当機関が保持します。政府はこれを、連合型の仕組みと呼んでいます。連合型とは、データを1か所に集めず、本人が自分の記録を管理し、共有する内容を選ぶ考え方です。一方、プライバシーの詳しい仕様は、私が確認した記事では示されていませんでした。</p>
+<h3 id="予定されているサービス">予定されているサービス</h3>
+<p>今後の計画として、パスポートの申請がオンラインで完結するようになります。写真のアップロードや支払いも、サイト上でできるようになる予定です。ただし、時期の報道には食い違いがあります。ある報道は、来年から初めての申請がオンラインでできると伝えています。別の報道は、大多数のアメリカ人が完全オンラインで申請できるのは、2027年末を目標にした段階的な展開だと伝えています。</p>
+<p>そのほか、メディケアの加入とプラン選び、結婚に伴う氏名変更、キャンプ場の予約、退役軍人向けの給付へのアクセスが挙げられています。最初の版は限定的で、今後数週間から数か月かけて拡張される見通しです。背景として、政府は1万件を超える書式を保有していると報じられています。</p>
+<h3 id="懸念と動作の確認">懸念と、動作の確認</h3>
+<p>懸念も出ています。ブルッキングス研究所のニコル・ターナー・リー氏は、誤った情報が示されたり、期限を逃したりすれば、結果は深刻になり得ると指摘しました。また、人による支援をAIで完全に置き換えることにも警鐘を鳴らしています。専門家からは、回答の正確さ、透明性、データの保護についての懸念も出ています。</p>
+<p>これに対し、メフメット・オズ氏は、すべての情報を1つのリンクにまとめたいわけではないという趣旨の発言をしたと報じられています。集中管理への不安に応える発言と読めますが、詳しい文脈は確認できていません。</p>
+<p>報道機関による動作確認も1件あります。アルジャジーラが試したところ、サイトは特定の政党に肩入れするような評価を避けました。また、2020年の大統領選挙の勝者を、バイデン氏と正しく答えました。ただし、これは1件の簡単な確認であり、正確さの全体像を示すものではありません。</p>
+<h3 id="同じ名前の過去のサイト">同じ名前の過去のサイト</h3>
+<p>実は、アメリカ・ドット・ガブという名前は、以前にも使われていました。国務省が、海外の人々に向けて運営していたサイトです。2000年代後半に始まったとされますが、開始時期を示す資料には食い違いがあります。以前の名称はユーエスインフォでした。</p>
+<p>このサイトは、アメリカの文化や政策を紹介し、英語以外の複数の言語でも記事を提供していました。しかし2011年、国務省は大きな告知もないまま、サイトの運営をやめ、ソーシャルメディアの取り組みに資源を移しました。サイトには、アーカイブされるという通知が出ましたが、内容がどう保存されるかの説明はありませんでした。</p>
+<p>つまり、今回のサイトは同じ名前でも、まったく別の目的を持っています。以前は海外向けの広報でした。今回は、国内の利用者が政府サービスを使うための入り口です。</p>
+<h3 id="まとめ">まとめ</h3>
+<p>最後に、要点を整理します。1つ目。新しいアメリカ・ドット・ガブは、2026年9月29日に発表された、AIによる政府サービスの案内サイトです。2つ目。ジェミニとグロックが使われ、パスポートのオンライン申請などが今後追加されますが、時期の報道は一致していません。3つ目。正確さとデータ保護への懸念が指摘されており、実際の運用実績はまだほとんどありません。以上の内容は、2026年9月末時点の報道に基づいています。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
