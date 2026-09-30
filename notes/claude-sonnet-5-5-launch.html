@@ -1,0 +1,65 @@
+<title>Claude Sonnet 5.5の発表</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/claude-sonnet-5-5-launch.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Claude Sonnet 5.5の発表</h1>
+    <div class="doc">
+<h3 id="概要">概要</h3>
+<p>今回は、人工知能開発企業アンソロピックが、新しい大規模言語モデルであるクロード・ソネット5.5を発表したニュースを取り上げる。発表は2026年9月28日に行われた。このモデルは、同社が展開するクロード5.5シリーズの中で2番目に投入されたモデルであり、価格を据え置いたまま、速度とコスト効率を大きく改善した点が特徴となっている。</p>
+<h3 id="発表の内容と性能面の特徴">発表の内容と性能面の特徴</h3>
+<p>クロード・ソネット5.5の価格設定は、従来モデルであるクロード・ソネット5と同じであり、入力トークン100万個あたり2ドル、出力トークン100万個あたり10ドルに据え置かれている。ここでいうトークンとは、AIが文章を処理する際の最小の単位のことである。アンソロピックによれば、同社の検証において、出力の生成速度は従来モデルに比べて30%以上速くなり、同時に1つの作業あたりのコストは最大30%削減されたという。</p>
+<p>性能面では、あらかじめ範囲が明確に定められた日常的な作業、たとえばプログラムの不具合修正や、仕上がりの整った文書、スライド、表計算シートの作成といった用途に特に強みを持つとされている。また、デザインに関する感覚にも優れていると、アンソロピックは説明している。さらに、いくつかの評価項目では、処理の深さを抑えた低負荷、または中程度の負荷の設定で動かした場合でも、従来モデルであるクロード・ソネット5が最も高い負荷で出した最高スコアを上回ることができ、しかもその際のコストはおよそ10分の1で済むとされている。</p>
+<h3 id="提供体制とセキュリティ面">提供体制とセキュリティ面</h3>
+<p>クロード・ソネット5.5は、アンソロピック自身のプラットフォームに加えて、アマゾン・ウェブ・サービシズ、グーグル・クラウド、マイクロソフト・アジュールを含む、すべての主要な提供先で利用可能になっている。データの取り扱いについては、先に発表されたクロード・オーパス5.5やクロード・ソネット5と同様に、利用者のデータを保持しないゼロ・データ・リテンションの方針で提供される。</p>
+<p>セキュリティ面では、クロード・ソネット5.5は、最上位モデルであるクロード・オーパス5と同等のサイバーセキュリティ対応能力を持つとされている。これは、ソネットという製品系列のモデルとしては初めて、最も高性能なモデル群と同様のサイバーセキュリティ上の安全対策と、問題が起きた際の代替の仕組みを備えて投入された事例である。なお、このモデルが確実に把握している知識の範囲は、2026年6月までとなっている。</p>
+<h3 id="今後の展開">今後の展開</h3>
+<p>アンソロピックは、クロード5.5シリーズの一環として、今後数週間のうちに、大量の処理件数を伴う用途や、コストを特に重視する用途向けに設計された、クロード・ハイク5.5を追加で投入する計画も明らかにしている。これにより、最上位のオーパス、中間に位置するソネット、そして軽量なハイクという、3つの性能帯にわたるクロード5.5シリーズの構成が、今後数週間で出そろう見通しである。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
