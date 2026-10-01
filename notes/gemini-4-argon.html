@@ -1,0 +1,82 @@
+<title>Gemini 4 Argon</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/gemini-4-argon.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Gemini 4 Argon</h1>
+    <div class="doc">
+<h3 id="全体の見取り図">全体の見取り図</h3>
+<p>ジェミナイ4・アルゴンについて説明します。グーグルが2026年9月30日に発表した、最上位のAIモデルです。内容は5つあります。位置づけ、性能、安全対策、提供方法と価格、そして発表前に出ていた噂との関係です。情報の大半はグーグル自身の発表と、それを伝える報道に基づいています。独立した第三者による検証は、現時点ではまだ見当たりません。</p>
+<h3 id="位置づけ">位置づけ</h3>
+<p>ジェミナイ4・アルゴンは、グーグルが最先端モデルと呼ぶ製品です。想定する用途は3つあります。ソフトウェア開発、企業の専門的な知的作業、そしてサイバー防御です。グーグルは、長時間にわたる複雑な作業の流れを一貫して扱えることを強みとして挙げています。具体的には、深い推論、長い工程にわたる問題解決、画像や動画を含む多様な情報の理解です。</p>
+<p>技術面で目立つ変更は、出力できるトークン数の上限です。トークンとは、AIが文章を処理するときの単位のことです。この上限は、従来の6万4000から100万に引き上げられました。これにより、長いコードの変更や長文の資料作成を、一度の出力で扱えるようになります。</p>
+<h3 id="性能">性能</h3>
+<p>性能は、複数のベンチマークで示されています。ベンチマークとは、モデルの能力を測る共通の試験のことです。以下の数値はいずれもグーグルの発表によるものです。</p>
+<p>ソフトウェア開発では、ディープエスダブリューイー
+バージョン1.1で77.9%を記録しました。これは実際のソフトウェア開発に近い課題を解く試験です。業務の自動化では、ザピアーが作ったオートメーションベンチで51.3%となり、1位です。この試験は、企業の中核業務を最初から最後まで実行できるかを測ります。</p>
+<p>長い動画の理解を測るエルブイベンチでは、91.7%でした。財務、コーディング、法務、税務の業務を測るヴァルズインデックスでも、首位とされています。さらに、プロンプトインジェクションへの耐性を測るグレイスワンの試験でも、先頭の成績とされています。プロンプトインジェクションとは、外部の文章に紛れ込ませた命令でAIを誤作動させる攻撃です。</p>
+<h3 id="サイバーセキュリティ">サイバーセキュリティ</h3>
+<p>アルゴンは、セキュリティ分野を特に重視しています。グーグルによると、重大なソフトウェアの脆弱性を見つけ、検証し、人手を介さずに修正できます。脆弱性とは、攻撃に悪用されうるソフトウェアの欠陥のことです。</p>
+<p>脆弱性の修正能力を測るシーダブリューイーベンチ
+バージョン1では、68%で1位タイです。つまり、単独首位ではなく、同点で並んでいます。また、20のプログラミング言語を対象にした社内試験では、医療ソフトウェアの重大な脆弱性を発見しました。これは、世界中で使われるシステムで個人情報が露出しうる欠陥です。グーグルによると、従来の最先端モデルは、この欠陥を見逃していました。侵入テストでも、攻撃対象の洗い出しと脆弱性の発見で、前世代のジェミナイ3.8フラッシュ・サイバーを上回ったとされています。</p>
+<p>社内での活用例も紹介されています。第1に、量子最適化の改善です。基準となる手法を40%上回ったとされています。第2に、データセンター全体で300テビバイト以上のメモリを解放しました。第3に、シーおよびシープラスプラスのコードからラストへの移行で、最大80万行以上を扱った例があります。ただし、これらは社内事例であり、外部での再現は確認されていません。</p>
+<h3 id="安全対策">安全対策</h3>
+<p>アルゴンの能力は、攻撃にも使えます。そのためグーグルは、複数の対策を講じたと説明しています。1つ目は、社内外のレッドチームによる試験です。レッドチームとは、攻撃者の立場で弱点を探す検証担当者のことです。2つ目は、サイバー攻撃と、化学、生物、放射性物質、核による危害への悪用に対する、防御の強化です。3つ目は、モデルの思考過程を監視する仕組みです。必要な場合は、実行を止められます。4つ目は、公開前に、隔離された強化環境で試験することです。</p>
+<p>また、グーグルはアメリカ政府の自主的な公開前モデル評価の枠組みにも参加しました。一方で、防御は固定されていません。早期の利用者からの反応を受けて、調整が続いています。そのため、段階的な提供が必要だと、グーグルは説明しています。</p>
+<h3 id="提供方法と価格">提供方法と価格</h3>
+<p>最初の提供先は、フェアウィンド・プログラムに参加する、信頼されたサイバー防御者です。このプログラムでは、通常のサイバー関連の制限を外した版が、防御者とグーグルの社内チームに渡されます。たとえばウィズは、スキャン・フォー・グッドという取り組みでアルゴンを使っています。重要な公共インフラの露出を、無償で調べる取り組みです。</p>
+<p>一般向けの提供については、グーグルは、安全面の改善を重ねたうえで、できるだけ早く開発者、企業、一般利用者へ広げるとしています。順序は、有料のエーピーアイ顧客と、グーグル・エーアイ・ウルトラの契約者からです。ただし、具体的な日付は示されていません。</p>
+<p>価格は2段階です。導入期間中は、100万トークンあたり、入力が2ドル、出力が10ドルです。導入期間の後は、入力が4ドル、出力が20ドルになります。つまり、価格は2倍です。再利用されるキャッシュ済みの入力には、入力価格から95%の割引が適用されます。</p>
+<h3 id="発表前の噂との関係">発表前の噂との関係</h3>
+<p>発表の前から、ジェミナイ4に関する噂がありました。2026年9月26日、エルエムアリーナというモデル比較の場に、ジェミナイ3.8フラッシュという名前に偽装したチェックポイントが現れた、という報道です。チェックポイントとは、開発途中のモデルの状態のことです。アルゴンは、その内部名ではないかとされていました。</p>
+<p>ただし、この噂の情報には注意が必要です。噂の段階では、ディープエスダブリューイーで88%という数値が流れていました。しかし、グーグルの公式発表では77.9%です。数値が異なるため、噂の数値と公式のモデルが同一かどうかは、確認できていません。公式の数値を基準にするのが適切です。</p>
+<h3 id="まとめ">まとめ</h3>
+<p>最後に、要点を整理します。ジェミナイ4・アルゴンは、2026年9月30日に発表された、グーグルの最先端モデルです。ソフトウェア開発、業務自動化、サイバー防御で高い成績が示されています。ただし、数値は主にグーグルの発表に基づき、第三者の検証は限られます。当面の提供先は限定されており、一般提供の時期は未定です。価格は導入期間後に2倍になります。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
