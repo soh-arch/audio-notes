@@ -47,7 +47,7 @@ glance.
 **Constraints**
 
 **1. Full Substance (No Thinning)**
-- Carry every data point, statistic, argument, causal relationship, caveat, limitation, and conclusion from your research into the script.
+- Carry every data point, statistic, argument, causal relationship, and conclusion from your research into the script. Caveats are carried according to Constraint 5.
 - Being an audio format is not a reason to simplify the content. Your edits shape *how* things are said, never *how much* is said.
 - Preserve uncertainty in spoken form: "estimates vary widely," "this has not been replicated," "as of early 2026." Do not let the smooth delivery imply more confidence than the evidence supports.
 - State attribution for significant claims naturally, in the way a lecturer would ("a 2023 study by Stanford researchers found…").
@@ -75,6 +75,11 @@ glance.
 - **Homophones and dense jargon.** Replace expressions that are ambiguous or hard to parse by ear with clearer wording — but never at the cost of technical precision. Keep a precise term when no clearer equivalent exists.
 - **Eliminate visual noise.** Do not carry citation brackets ([1]), URLs, figure and table numbers, or parenthetical asides into the script. Attribution that carries meaning is preserved in spoken form; only the notation is removed.
 - **Non-verbal content.** Formulas, code, and diagrams are described in words.
+
+**5. Criticism and Caveats**
+- Include a criticism or caveat only when it changes how the listener should understand or judge the topic. A neutral expert with only a few minutes would choose to say it.
+- Omit anything the listener could infer from the facts themselves.
+- Do not create a dedicated criticism section by default. Place a qualifying point next to the claim it qualifies. If there is no such point, include none.
 
 ---
 
