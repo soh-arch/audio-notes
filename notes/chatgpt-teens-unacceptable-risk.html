@@ -1,0 +1,75 @@
+<title>ChatGPT for Teens、「許容できないリスク」評価の内容</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/chatgpt-teens-unacceptable-risk.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">ChatGPT for Teens、「許容できないリスク」評価の内容</h1>
+    <div class="doc">
+<h3 id="調査の概要">調査の概要</h3>
+<p>今回取り上げるトピックは、チャットジーピーティーの未成年向けモード、通称チャットジーピーティーフォーティーンズに対して、安全性を監視する団体が最低評価を下したという報道です。この原稿では、評価を下した団体と調査方法、見つかった主な問題点、オープンエーアイ側の反論、そしてこの評価をどう位置づけるべきかという留意点の順に取り上げます。</p>
+<p>評価を下したのは、米国の非営利団体コモンセンスメディアの傘下にある、ユース・エーアイ・セーフティ・インスティテュートという研究機関です。この機関は2026年10月7日、水曜日に報告書を公表し、オープンエーアイが提供する13歳から17歳向けのティーンモードを、5段階評価のうち最低にあたる、許容できないリスクと評定しました。調査では、13歳から17歳として登録されたアカウントを使い、ティーンモード導入前と導入後の両方で、合わせて4,000件を超えるプロンプトをテストしています。寄せられた危機的な内容を含むやり取りは、小児精神医療の専門資格を持つ専門家のパネルが審査しました。</p>
+<h3 id="保護者通知の欠陥">保護者通知の欠陥</h3>
+<p>報告書が最も重く見た問題は、保護者への通知機能の欠陥です。研究者らは、保護者のアカウントとリンクさせた、10件を超える新規のティーンアカウントを作り、自殺念慮や自傷行為、摂食障害をうかがわせる内容を含む会話を行いました。この結果、新しく作られたアカウントでは、会話が60分間続いても、保護者への通知が一件も送られませんでした。</p>
+<p>一方で、数週間分の機微な会話履歴がすでに積み重なっている古いアカウントでは、通知が送られる例があったといいます。この対比から、研究者らは、通知の有無が会話の深刻さそのものではなく、アカウントに蓄積された履歴の量によって左右されている可能性があると指摘しています。これは重要な点で、深刻な内容であっても、履歴の浅い新規アカウントでは保護者が気づけない構造があることを意味します。</p>
+<h3
+id="危機対応の見落としとその他の不備">危機対応の見落としと、その他の不備</h3>
+<p>報告書は、このほかに3つの不備を挙げています。第一に、精神的な危機への対応が必要と判断される事例のうち、4件に1件を超える割合を、製品が見逃していたという点です。第二に、学習支援機能であるスタディモードの回避が極めて容易だったという点です。具体的には、プロンプトの先頭につける、アットスタディという接頭辞を単に削除するだけで制限が外れ、その後はチャットジーピーティーが、80回の試行すべてで、課題を代わりに完成させてしまいました。</p>
+<p>第三に、年齢を推定する仕組みや、不適切な内容を遮るガードレール、使用の合間に休憩を促す機能についても、効果が乏しいという評価がされています。研究者らは、一部の保護機能については、新しいティーンモードの導入によって、かえって弱くなった例もあったとしています。一方で、全てのガードレールが失敗したわけではありません。露骨な性的内容を含むロールプレイの要求を拒む機能については、テストの中で機能していたと報告されています。報告書は、こうした部分的な成功があることを認めつつも、全体として保護者に誤った安心感を与えかねないと警告しています。</p>
+<h3
+id="コモンセンスメディアの要求とオープンエーアイの反論">コモンセンスメディアの要求とオープンエーアイの反論</h3>
+<p>これらの結果を踏まえ、コモンセンスメディアは、安全で発達段階に適した体験を提供できるようになるまで、この製品の利用を成人のみに限定するよう、オープンエーアイに求めています。</p>
+<p>これに対し、オープンエーアイは評価そのものに反論しています。同社は独立した評価を歓迎するとした上で、コモンセンスメディアのテスト手法が、実際の安全対策の機能を正しく反映していないと述べました。具体的には、保護者とのアカウント連携が完了するまでには数時間かかる場合があり、テストの多くはその連携が終わる前、あるいは保護機能が完全に有効化される前に行われた可能性があると説明しています。また、オープンエーアイは、ティーン向けの体験にはより強いデフォルトの保護機能が組み込まれているとし、実際の10代の利用者は1日あたり15分未満しか使っておらず、主な用途も学習であるとするデータも示しています。</p>
+<h3 id="背景">背景</h3>
+<p>ティーンモードそのものの経緯にも触れておきます。オープンエーアイは2025年9月、このティーン向け体験を開発していると発表しました。この発表は、エーアイチャットボットが未成年に与える害について議論する、米国上院の公聴会の数時間前に行われたものです。この公聴会では、チャットジーピーティーとの対話の末に16歳の息子を自殺で失ったという父親が証言し、遺族は前月、オープンエーアイとサム・アルトマン最高経営責任者を相手に、チャットジーピーティーが自殺の計画を助けたとして提訴していました。</p>
+<p>発表された計画では、年齢を推定する仕組みが18歳未満と確信できない利用者を自動的にティーン向け体験に振り分け、保護者はアカウントの連携や、利用できない時間帯の設定、そして危機的な発言があった際の通知を受け取れるとされていました。このティーンモードは2026年8月18日から世界的な展開が始まり、今回の報告書が対象とした10月時点でも、提供範囲はなお拡大の途上にあります。</p>
+<h3 id="留意点">留意点</h3>
+<p>最後に、この評価の位置づけについて2点補足します。1点目は、これは政府や規制当局による法的な認定ではなく、独立した民間のアドボカシー団体による調査結果だという点です。評価の方法や基準は、公的な規制の枠組みとは異なります。</p>
+<p>2点目は、コモンセンスメディアとオープンエーアイの関係です。両者は2026年10月時点で評価をめぐって対立していますが、無関係な第三者同士というわけではありません。2024年には、エーアイの安全指針づくりで協力する関係を結んだことがあり、2026年にはカリフォルニア州における未成年保護をめぐって、互いに競合する住民投票の動きで対立し、その後妥協に至ったという経緯もあります。この関係の歴史を踏まえると、双方の主張を、単純な第三者対企業という構図だけで受け取らない方がよいといえます。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
