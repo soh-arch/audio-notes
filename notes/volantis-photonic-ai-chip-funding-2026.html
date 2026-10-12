@@ -1,0 +1,65 @@
+<title>Volantisの光学メモリー接続チップと8800万ドルの資金調達</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/volantis-photonic-ai-chip-funding-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Volantisの光学メモリー接続チップと8800万ドルの資金調達</h1>
+    <div class="doc">
+<h3 id="概要">概要</h3>
+<p>本稿では、AI推論向けの新しい半導体アーキテクチャを開発する新興企業ヴォランティスが、8800万ドルのシリーズAラウンドを実施したという件について取り上げる。具体的には、資金調達の内容、同社が開発する技術の仕組み、同社が掲げる性能目標とその位置づけ、そして開発チームの背景という順に説明する。</p>
+<h3 id="資金調達の内容">資金調達の内容</h3>
+<p>ヴォランティスは、8800万ドルのシリーズAラウンドを発表した。発表の日付については報道によって幅があり、9月29日とする報道と、10月1日とする報道がある。このラウンドは、投資家のラッチー・グルーム氏と、投資会社アブストラクト・ベンチャーズが共同で主導した。ほかにも、著名投資家のジョン・ドーア氏や、ブイエックスアイ・キャピタル、トライアトミック、スーサ・ベンチャーズといった投資会社、さらにエンジェル投資家として知られるドワルケシュ・パテル氏、ナビーン・ラオ氏、ショルト・ダグラス氏が参加した。ある報道では、これまでの累計調達額は9700万ドルに達しているとされている。</p>
+<h3 id="技術の仕組み">技術の仕組み</h3>
+<p>ヴォランティスが開発しているのは、GPU、つまり画像処理用の演算チップの周囲に、220個のメモリーチップを配置する独自のアーキテクチャである。この接続には、独自開発のマイクロ・ブイシーセル、つまり垂直共振器型面発光レーザーと呼ばれる小型レーザーを用いた光学配線が使われている。この設計の狙いは、メモリーの容量と転送速度という2つの性能を、同時にほぼ2桁、つまり約100倍の規模で高めることにある。従来、メモリーの容量を増やすことと転送速度を高めることは両立させにくいとされてきたため、この両立を目指す点が、同社の技術の核心にあたる。</p>
+<h3 id="性能目標の位置づけ">性能目標の位置づけ</h3>
+<p>ヴォランティスは、この設計をもとにした製品を「エーワン」と呼んでいる。会社が掲げる目標としては、ある報道では20兆を超えるパラメータ、つまりAIモデルの規模を示す指標を持つモデルを、利用者1人当たり毎秒1万トークンという速度で動かすことを目指すとされている。一方で、別の報道では、目標とするモデルの規模を10兆パラメータとしており、報道によって数字に差がある。いずれにしても、これらの数字はヴォランティス社自身が掲げる目標であり、独立した第三者による性能検証を経たものではない。実際、ヴォランティスはまだ量産製品を発表しておらず、独立機関によるベンチマーク結果も公表していない。ロイター通信の報道によれば、ヴォランティスは来年、つまり2027年にチップを届けることを計画しているとされている。</p>
+<h3 id="開発チームの背景">開発チームの背景</h3>
+<p>ヴォランティスの創業チームには、エヌビディアやエーエムディー、ブロードコム、そして光学配線を専門とするアヤー・ラブスの出身者が加わっている。報道によれば、メンバーの中には、半導体パッケージング技術であるコーウォスの最初の製品化や、量産規模でのチューナブル・ブイシーセル、つまり波長を調整できるレーザーの開発、そしてシリコンフォトニクスを用いた光学部品の早期の実用化に関わった経験を持つ人物が含まれている。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
