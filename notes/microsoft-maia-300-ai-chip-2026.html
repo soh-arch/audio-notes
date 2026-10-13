@@ -1,0 +1,68 @@
+<title>Microsoft's Maia 300 AI Chip and Its Challenge to Nvidia</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/microsoft-maia-300-ai-chip-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Microsoft's Maia 300 AI Chip and Its Challenge to Nvidia</h1>
+    <div class="doc">
+<h3 id="全体像">全体像</h3>
+<p>これから取り上げるのは、マイクロソフトが2026年10月12日に発表した、自社開発の人工知能向け演算装置の第3世代、マイア300についての報道である。これから5つの点を順に取り上げる。第一に発表の概要である。第二に製造量を巡る報道である。第三に性能とコストに関する主張である。第四にマイクロソフトとエヌビディアの関係である。第五に、同業他社と比べた規模の違いである。</p>
+<h3 id="発表の概要">発表の概要</h3>
+<p>マイクロソフトは、2026年10月12日、月曜日に、自社開発の人工知能向け演算装置の第3世代となる、マイア300を発表した。この新しい演算装置は、2027年から、マイクロソフト自身のクラウドサービス、アジュールを支える人工知能サービスの運用に使われる計画である。前の世代にあたるマイア200は、すでに生産段階にあり、マイクロソフトの対話型人工知能サービス、コパイロットの稼働を支えている。マイア200の仕様としては、1400億個を超えるトランジスタ、216ギガバイトのエイチビーエムスリーイーと呼ばれる高帯域幅メモリー、272メガバイトのオンチップのエスラム、そして毎秒10ペタフロップスを超えるエフピーフォー精度での演算性能を持つとされる。なお、マイア300自体の詳細な仕様や性能数値は、マイクロソフトからまだ公表されていない。</p>
+<h3 id="製造量を巡る報道">製造量を巡る報道</h3>
+<p>通信社ロイターは、米国の情報サービス、ジ・インフォメーションの報道を引用する形で、マイクロソフトが台湾の半導体受託生産企業、ティーエスエムシーと交渉を進めていると報じた。その内容は、2027年の納入分として、30万個を超えるマイア300の生産能力を確保するというものである。さらに、長期的には、100万個を超える規模まで生産を拡大する目標を持っているとされる。この数字について、マイクロソフト自身は生産数量を明らかにしていない。マイクロソフトは、報じられている数字は、自社の計画全体の規模を反映したものではないと述べている。</p>
+<h3 id="性能とコストに関する主張">性能とコストに関する主張</h3>
+<p>マイクロソフトが強調しているのは、生の演算性能そのものよりも、運用コストの低さである。マイクロソフトは2026年7月、投資家向けの説明で、オープンAIとマイクロソフト自身のモデルを動かす場合、マイア200は、最先端のエヌビディア製演算装置と比べて、運用コストが30%から40%安いと説明した。今回の報道では、マイア300において、さらなるコスト改善が社内試験で確認されているとされているが、具体的な改善幅の数字は示されていない。</p>
+<h3
+id="マイクロソフトとエヌビディアの関係">マイクロソフトとエヌビディアの関係</h3>
+<p>マイクロソフトは、エヌビディアとの関係を断つわけではない。アジュールは引き続きエヌビディア製の演算装置を導入しており、次世代のエヌビディア製システムの導入にも備えているとされる。同時に、マイクロソフトはエーエムディー製のハードウェアの利用も拡大している。ジ・インフォメーションの報道によれば、現時点でマイアを使った基盤の上で動く処理の大部分は、依然としてエヌビディア製のハードウェアが担っているとされる。つまり、マイア300は、エヌビディアへの依存を完全に置き換えるものではなく、コスト面での選択肢を広げる位置づけにあるといえる。</p>
+<h3 id="他社との規模比較">他社との規模比較</h3>
+<p>マイクロソフトの自社製人工知能向け演算装置の導入規模は、同業他社と比べると、現時点では見劣りする水準にあるとされる。モルガン・スタンレーの推計によれば、グーグルは、自社開発のテンソル・プロセッシング・ユニットを、年間300万個から500万個の規模で導入しているとされる。また、アマゾン・ウェブ・サービスは、自社製の演算装置トレイニウム2を、年間およそ100万個の規模で導入しているとされる。これらの数字と比べると、マイクロソフトが目指す100万個という規模は、競合に追いつくための目標という位置づけに近い。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
