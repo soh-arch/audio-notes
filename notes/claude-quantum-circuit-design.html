@@ -1,0 +1,66 @@
+<title>Claudeが設計した量子回路</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/claude-quantum-circuit-design.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Claudeが設計した量子回路</h1>
+    <div class="doc">
+<p>今回は、アンソロピック社のAIモデル「クロード」が、人間の研究者の最良設計を上回る量子回路を自ら作り出したという、2026年10月16日発表の研究結果を取り上げます。実験の体制、具体的な手法、得られた成果、そして残っている限界と不確実性の順に説明します。</p>
+<h3 id="実験の体制">実験の体制</h3>
+<p>この実験は、アンソロピック社の人材育成プログラムである「ステム・フェローズ・プログラム」の一環として行われました。研究を主導したのはアンディ・グー氏で、アンソロピック社の量子物理学者アレック・ケメニー氏が助言役を務めました。さらに、ハーバード大学のスザンヌ・イェリン氏と、ハーバード大学およびキュエラ・コンピューティング社に所属するミハイル・ルーキン氏が協力しました。実験自体は53時間にわたって行われたと報告されています。</p>
+<h3 id="手法">手法</h3>
+<p>手順はこうです。クロードがパイソンというプログラミング言語で量子回路の設計案を書き、それを自動評価プログラムに送ります。評価プログラムは、その回路が正しい計算結果を出すかどうかを検証した上で、使用する量子ビットの数と、計算の基本単位であるゲートの数、とりわけトフォリゲートと呼ばれる種類のゲートの数を基準に採点します。その採点結果がクロードに返され、クロードは次の設計案を考えます。最初の指示が与えられた後は、人間の介入はほとんどなかったとされています。なお、アンソロピック社によれば、クロードは当初は保守的な設計にとどまる傾向があり、より新しい手法を試すよう促す必要があったということです。</p>
+<h3 id="得られた成果">得られた成果</h3>
+<p>この手法で取り組んだ課題は、化学、物理シミュレーション、最適化、数論、数値計算という分野にまたがる8つの基準課題でした。結果として、クロードが設計した回路は、8つのうち7つの課題で、これまでに公表されていた最良の設計を上回りました。最も大きな成果の一つは、楕円曲線暗号の計算で使われる「モジュラー逆元」と呼ばれる処理の回路です。この回路は、使用する量子ビットの数が従来の最小設計よりおよそ12パーセント多くなるものの、必要なゲートの数を最大で17倍少なくすることに成功しました。もう一つの成果は、有力な量子最適化アルゴリズムであるディーキューアイ、すなわち量子干渉を使った復号という手法の、最も計算コストの高い段階を担う回路です。この回路では、比較対象となるグーグル社による設計と比べて、ゲートの数をおよそ12倍削減しました。</p>
+<h3 id="限界と不確実性">限界と不確実性</h3>
+<p>ここでいくつかの留保点を述べます。第一に、この研究は論文として未発表のプレプリントの段階にあり、論文番号は2610.22367です。そのため、第三者による再現実験はまだ行われていません。第二に、比較対象となった従来設計の数値は、この論文自身がまとめた表から取られたものであり、クロードの優位性は独立した形で検証されたわけではありません。第三に、8つの課題のうち1つでは、既存の設計を上回る結果は得られませんでした。第四に、モジュラー逆元の回路で見られたように、ゲート数を減らす代わりに量子ビットの数が増える場合があり、量子ビットの確保が難しい実際のハードウェア上では、この代償が無視できない制約になり得ます。</p>
+<h3 id="位置づけ">位置づけ</h3>
+<p>この研究は、AIモデルが人間の研究者の最良設計を上回る成果を、評価者とのやり取りを繰り返す形でほぼ自律的に生み出した例として注目されています。アンソロピック社は、このステム・フェローズ・プログラムを通じて、AIが科学研究そのものを加速させる役割を果たせることを示す事例として位置づけています。ただし、先に述べたとおり、成果の大きさは分野や課題によって異なり、再現性の検証もまだ済んでいない段階にあることは踏まえておく必要があります。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
