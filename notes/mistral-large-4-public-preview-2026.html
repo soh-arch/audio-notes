@@ -1,0 +1,65 @@
+<title>フランスのMistral AI、新モデルLarge 4を公開</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/mistral-large-4-public-preview-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">フランスのMistral AI、新モデルLarge 4を公開</h1>
+    <div class="doc">
+<p>今回は、フランスの人工知能企業ミストラル・エーアイが、新しい大規模言語モデル、ミストラル・ラージ4を公開した件について取り上げます。この原稿では、モデルの仕様、ベンチマークと呼ばれる評価基準での成績、価格、そして今回の発表が持つ意味について、順番に解説します。</p>
+<h3 id="モデルの公開と仕様">モデルの公開と仕様</h3>
+<p>ミストラル・エーアイは、2026年10月6日、新しい大規模言語モデルであるミストラル・ラージ4を、研究用の公開プレビューという形で発表しました。現時点では、同社のエーピーアイを通じて利用できる状態になっています。このモデルは、全体でおよそ1兆個のパラメータを持ちながら、実際の処理では、そのうちおよそ490億個のパラメータのみを使う設計になっており、これによって、大規模なモデルの性能を保ちながら、処理にかかる負荷を抑えているとされています。処理できる文章の長さ、いわゆるコンテキストウィンドウは51万2000トークンです。また、文章に加えて画像も入力できるようになっており、一度のやり取りで扱える画像の枚数は、従来のミストラルのモデルでは8枚までだったのに対し、今回のモデルでは100枚まで拡大されています。なお、ミストラル・エーアイは、このモデルの重み、つまりモデルの中身となるデータそのものを、2026年10月末までに公開する計画も示しています。ただし、これは現時点ではまだ実現していない、今後の計画である点に注意が必要です。</p>
+<h3 id="ベンチマークでの成績">ベンチマークでの成績</h3>
+<p>評価機関アーティフィシャル・アナリシスが、2026年10月6日付けで公表した分析によれば、ミストラル・ラージ4は、同社が定めるインテリジェンス・インデックスという総合的な知能の評価基準で、38点を記録しました。これは、オープンエーアイのジーピーティー6ルナを最も高い推論負荷で動かした場合の38点と同じ水準であり、中国のディープシークが開発したブイ4.1フラッシュを最も高い推論負荷で動かした場合の39点と比べると、わずかに下回る結果です。なお、ドイツの評価メディアであるイーゼル・エーアイによる独自の検証でも、38.4点という、ほぼ同じ結果が確認されています。</p>
+<p>サイバーセキュリティー関連の能力を測るサイバー・インデックスという評価基準では、ミストラル・ラージ4は50点を記録しました。これは、ジーエルエム5.3フラッシュと同じ水準であり、マイモ・ブイ2.6プロの56点には及ばないものの、キミ・ケースリーや、先ほどのディープシークのブイ4.1フラッシュを最も高い推論負荷で動かした場合の結果は上回っています。さらに、サイバーセキュリティーの実践的な演習能力を測る、サイバージムという評価項目では82パーセントを記録し、これはマイモ・ブイ2.6プロの79パーセントや、ジーピーティー6ルナを最も高い推論負荷で動かした場合の78パーセントを上回る、ミストラル・ラージ4にとって最も良い結果となっています。一方、文書や画像をもとに推論する能力を測る評価基準では19パーセントを記録し、これはマイモ・ブイ2.6プロと同水準ですが、キミ・ケースリーの22パーセントには届きませんでした。ただし、この19パーセントという数字自体は、前の世代のモデルであるミストラル・ラージ3と比べて、18ポイント分の改善にあたるとされています。なお、これらの評価は、アーティフィシャル・アナリシスという1つの評価機関による分析であり、他の機関による独立した再現は、今回確認できていません。</p>
+<h3 id="価格">価格</h3>
+<p>価格について、標準的な利用の場合、入力100万トークンあたり1.36ドル、出力100万トークンあたり4.18ドルとなっています。また、同じ内容を繰り返し処理する際に使われる、キャッシュされた入力については、100万トークンあたり0.14ドルです。公開から最初の2週間は、価格が50パーセント割引となり、入力が0.68ドル、出力が2.09ドルになります。インテリジェンス・インデックスの評価作業1件あたりのコストで見ると、標準価格では1.13ドル、割引価格では0.57ドルとなります。これは、ジーエルエム5.3フラッシュの0.25ドルや、ディープシークのブイ4.1フラッシュを最も高い推論負荷で動かした場合の0.27ドルと比べると、依然として高い水準です。アーティフィシャル・アナリシスの分析では、同程度の知能水準を持つ、重みが公開されている他のモデルと比べて、4倍を超えるコストになっているとも指摘されています。</p>
+<h3 id="今回の発表が持つ意味">今回の発表が持つ意味</h3>
+<p>アーティフィシャル・アナリシスの記事は、今回のミストラル・ラージ4の公開によって、フランスが、アメリカと中国以外の国の中で、最も高い知能水準を持つモデルを持つ国に、再びなったと位置づけています。この評価では、韓国やアラブ首長国連邦といった国々も比較の対象とされており、フランスがこれらの国を上回っているとされています。つまり、今回の発表は、個々の技術的な成績に加えて、人工知能の開発競争において、アメリカと中国以外の国や地域がどこまで競争力を持てるかという、より大きな構図の中でも注目されている出来事だと言えます。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
