@@ -1,0 +1,77 @@
+<title>Reflection AIの新型オープンウェイトモデルBeam</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/reflection-ai-beam-model.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Reflection AIの新型オープンウェイトモデルBeam</h1>
+    <div class="doc">
+<h3 id="概要">概要</h3>
+<p>本日は、アメリカの新興エーアイ企業、リフレクション・エーアイが発表した新しい大規模言語モデル、ビームについて解説します。このモデルは、重みデータを公開して誰でも利用できるようにする、いわゆるオープンウェイトモデルの分野で、中国企業が優位に立っている状況に対抗する動きとして注目されています。あわせて、同社をめぐってエヌビディアが買収や追加出資を検討しているという最近の報道についても取り上げます。</p>
+<h3 id="モデルの技術的な仕組み">モデルの技術的な仕組み</h3>
+<p>ビームは、2026年10月上旬に発表されました。テキストのみを扱うモデルで、スパース・ミクスチャー・オブ・エキスパーツ、すなわち複数の専門家ネットワークのうち一部だけを都度使う方式を採用しています。総パラメータ数は5010億、実際に1回の処理で使われる活性パラメータ数は230億です。</p>
+<p>事前学習には、ウェブ上のデータと許諾を得たデータを合わせて23.8兆トークンが使われました。トークンとは、モデルが処理する際の文章の断片の単位です。さらに、強化学習と呼ばれる追加の訓練段階では、エヌビディア製の最新型グラフィック処理装置、ジービー300を1万500基使い、4週間にわたって計算が行われました。</p>
+<h3
+id="性能に関する主張と確認されていない点">性能に関する主張と、確認されていない点</h3>
+<p>リフレクション・エーアイ自身の発表によると、ビームはコーディングやエージェント的な作業、つまりタスクを自律的に遂行する処理において、中国のジーエルエムファイブ・ポイント・ツーに匹敵する性能を持ち、クウェン3.8マックスにも近づいているとされています。一方で、同社自身も、キミ・ケースリーという別の中国製モデルについては、生の性能面でなお上回っていると認めています。</p>
+<p>また、推論時の計算量については、比較対象とした西側の競合オープンモデルより3倍から4倍少ない計算量で済むと主張しています。ただし、テッククランチの報道は、これらの性能および効率に関する主張が独立した第三者による検証を受けていないと指摘しており、この点は留意が必要です。</p>
+<h3 id="公開状況とライセンス">公開状況とライセンス</h3>
+<p>2026年10月時点で、ビームの重みデータそのものはまだ公開されていません。リフレクション・エーアイは、最終的な安全性検証、いわゆるレッドチーム評価を実施している段階だとしています。同社は、重みデータに加えて技術報告書、モデルカード、開発者向けツールを、10月中にアパッチ2.0という利用制限の少ないオープンソースライセンスのもとで公開する計画を示しています。現時点では、希望者が順番待ちの登録をすることで早期アクセスを得られる仕組みが用意されています。</p>
+<h3
+id="開発の背景にある企業とこれまでの資金調達">開発の背景にある企業と、これまでの資金調達</h3>
+<p>リフレクション・エーアイは2024年に設立された企業です。設立者は、いずれもグーグル・ディープマインドの主任研究員だった、ミーシャ・ラスキン氏とイオアニス・アントノグルー氏の2人です。</p>
+<p>資金調達の経緯を見ると、2025年3月のシリーズAでは1億3000万ドルを調達し、評価額は5億4500万ドルでした。続く2025年10月のシリーズBでは、エヌビディアが主導する形で20億ドルを調達し、評価額は80億ドルに達しました。このシリーズBには、エヌビディアに加えて、元グーグル最高経営責任者のエリック・シュミット氏、金融大手のシティ、1789キャピタル、そして既存株主であるセコイア・キャピタルとライトスピードが参加しています。</p>
+<p>2026年初めには、評価額200億ドルを超える条件で新たな投資家を募っているという報道がありました。さらに、英国の経済紙、フィナンシャル・タイムズの報道によれば、2026年3月に実施された資金調達ラウンドでは、評価額が250億ドルに達したとされています。なお、一部の集計サイトは、2026年5月に25億ドル規模のシリーズCが評価額275億ドルで実施されたとする情報を示していますが、これは一次報道で確認できておらず、不確かな情報として扱う必要があります。</p>
+<h3
+id="エヌビディアによる買収出資検討の動き">エヌビディアによる買収・出資検討の動き</h3>
+<p>フィナンシャル・タイムズは2026年10月10日、エヌビディアがリフレクション・エーアイの買収、または出資の積み増しについて協議していると報じました。この報道によれば、エヌビディアはこれまでに同社へ合計8億ドルを投資しているとされています。ロイターはこの報道を伝えましたが、独自に内容を検証できたわけではないとしています。</p>
+<p>報じられている選択肢は複数あります。具体的には、会社全体を買収する案、追加の株式に出資する案、そして半導体や計算資源の供給契約を結ぶ案です。さらに、従業員を個別に採用して技術の利用権を得る、いわゆるアクワイハイアーという形式を取れば、独占禁止法に基づく長期の審査を避けられる可能性があるとも指摘されています。合意は数週間以内にまとまる可能性があるとされていますが、協議が不成立に終わる可能性も残っています。</p>
+<h3 id="全体像">全体像</h3>
+<p>今回の一連の動きは、オープンウェイトモデルの分野で中国企業に対抗する西側の有力な選手として、リフレクション・エーアイが位置づけられていることを示しています。同時に、主要な出資者であるエヌビディア自身が、この新しいモデルを無償で公開する直前の時期に、その開発元企業そのものを買収する可能性を検討しているという点は、今後のビームの公開や性質に影響を与えうる要素として注視する必要があります。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
