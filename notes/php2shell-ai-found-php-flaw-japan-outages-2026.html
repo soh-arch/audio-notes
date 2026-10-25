@@ -1,0 +1,76 @@
+<title>PHP2Shell: AIが見つけたPHPの重大脆弱性と国内500件超の停止</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/php2shell-ai-found-php-flaw-japan-outages-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">PHP2Shell: AIが見つけたPHPの重大脆弱性と国内500件超の停止</h1>
+    <div class="doc">
+<p>この原稿では、ウェブで広く使われるプログラミング言語、ピーエイチピーに見つかった2件の重大な脆弱性を扱います。内容は3つです。第1に、脆弱性の中身と、発見にオープンエーアイのエーアイモデルが関わった経緯です。第2に、情報の早期流出による混乱です。第3に、日本国内で500件を超えたサービス停止と、その評価です。</p>
+<h3 id="脆弱性の中身">脆弱性の中身</h3>
+<p>問題となったのは、オランダの国家サイバーセキュリティセンターが「ピーエイチピー・ツー・シェル」と名付けた2件の脆弱性です。どちらも、認証なしで外部からサーバー上のプログラムを実行できる、遠隔コード実行につながります。深刻度の評価は、10点満点で9.2点です。</p>
+<p>2件の仕組みは次のとおりです。1件目は、メモリー不足を処理する際にメモリーが破損する欠陥です。2件目は、あるリクエストの状態が後続のリクエストに使い回されてしまう欠陥です。いずれもメモリー管理とエラー処理という、ほぼすべてのリクエストが通る部分にあります。セキュリティ企業オックス・セキュリティによると、問題の機能は初期設定で有効になっており、ピーエイチピーのバージョン5.4の時代から存在していました。</p>
+<p>影響範囲は非常に広いとされます。調査サイトのダブリュー・スリー・テックスによると、サーバー側の言語を使うサイトの約7割がピーエイチピーを使っています。また、セキュリティ企業アンラボは、脆弱なピーエイチピーを使っているとみられるホストを世界で100万以上、日本で15万以上観測したとしています。ただし、実際に被害を受けうるサイト数は分かっていません。</p>
+<p>修正版は、日本時間の10月21日夜に公開されました。対象はバージョン8.2から8.5までの各系列です。一方で、バージョン8.1以前はすでにサポートが終了しており、公式の修正は提供されません。</p>
+<h3 id="エーアイによる発見という経緯">エーアイによる発見という経緯</h3>
+<p>今回の特徴は、発見にエーアイが関わったことです。オープンエーアイによると、セキュリティ企業カリフが、同社のモデルであるジーピーティー5.6ソルを使い、2件のうち1件を発見しました。これは、オープンエーアイが進める「パッチ・ザ・プラネット」という脆弱性対策の取り組みの一環です。なお、クラウドセキュリティ企業のウィズも、2件の両方を独自に発見して報告しています。</p>
+<p>オープンエーアイは、ピーエイチピーの開発者や研究者、セキュリティ企業と約2か月にわたって連携し、修正を準備したと説明しています。連携先には、ホワイトハウスや米国のサイバーセキュリティ・インフラセキュリティ庁も含まれます。また、脆弱なバージョンを判定するツールも公開しました。</p>
+<p>ただし、注意すべき点があります。発見の経緯は主にオープンエーアイ自身の発表に基づいており、モデルをどう使ったのかは具体的に示されていません。また、オープンエーアイは、こうしたモデルを販売する当事者でもあります。同社自身も、エーアイは防御側だけでなく攻撃側も助けうると認めています。</p>
+<h3 id="情報流出と混乱">情報流出と混乱</h3>
+<p>公開の手順は計画どおりには進みませんでした。修正版は当初、日本時間の22日夜に公開される予定でした。しかし、21日の未明からフォーラムや交流サイトで情報が広がりました。このため、公開は丸1日前倒しされました。</p>
+<p>混乱には3つの要因がありました。第1に、深刻度が誤って満点の10点と伝えられ、騒ぎが大きくなりました。第2に、攻撃を実証する動画が誤って公開されるなど、情報管理に乱れがありました。第3に、米国のクラウドフレアは、公開前から顧客への攻撃通信を観測したと報告しています。</p>
+<p>さらに、今回の脆弱性につながる兆候は、2024年の外部監査ですでに見つかっていました。しかし攻撃経路が特定できず、修正は停滞を繰り返しました。ピーエイチピーの運営財団は、これを「構造的な失敗」と認めています。</p>
+<h3 id="国内のサービス停止">国内のサービス停止</h3>
+<p>日本では、修正が間に合わないサービスを予防的に止める動きが広がりました。日本経済新聞によると、民間の調査で、国内の停止は累計500件を超えました。</p>
+<p>影響は生活に関わる分野にも及びました。ソフトバンクは、緊急速報メールの緊急メンテナンスを行いました。このため、ソフトバンクとワイモバイルの利用者が、緊急地震速報や津波警報を一時受け取れなくなりました。ほかにも、ジーエムオー・ペパボのレンタルサーバー、京阪ホールディングスのホームページ、自治体の公式サイト、ピクシブやニコニコなどで停止や保守作業が行われました。</p>
+<p>政府も異例の呼びかけをしました。高市首相は21日夜、修正をすぐに適用できない場合はサイトの一時停止も有効だと投稿しました。首相の公式サイトも実際に一時停止されました。また、情報処理推進機構と国家サイバー統括室も注意を呼びかけました。</p>
+<h3 id="今後の課題">今後の課題</h3>
+<p>最大の課題は、修正できないサイトの多さです。デロイトトーマツサイバーの推計では、ピーエイチピーを使う国内サイトの約半数は、公式の修正を適用するのが難しい状況です。サポートが終わった古いバージョンを使っているためです。長く更新されていない休眠サイトも多いとみられ、閉鎖が急務とされています。</p>
+<p>一方で、今回の対応を前向きに評価する見方もあります。インプレスの論評は、鉄道の計画運休のように、予防的な計画停止が日本でも受け入れられる素地が生まれつつあると指摘しています。ただし、停止しただけでは不十分です。専門家は、修正を当てても、すでに侵入した攻撃者の足場は消えない可能性があると警告しています。また、クラウドフレアの最高経営責任者は、ピーエイチピー関連の問題が今後も出てくると予告しています。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
