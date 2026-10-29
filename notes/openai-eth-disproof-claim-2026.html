@@ -1,0 +1,67 @@
+<title>OpenAI、Exponential Time Hypothesisを反証したと発表</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/openai-eth-disproof-claim-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">OpenAI、Exponential Time Hypothesisを反証したと発表</h1>
+    <div class="doc">
+<p>この原稿では、オープンエーアイが社内の未公開モデルによって、計算機科学の有名な予想を反証したと発表した件を扱います。最初に発表の中身を説明します。続いて、検証の体制と、現時点での注意点を整理します。</p>
+<h3 id="発表の概要">発表の概要</h3>
+<p>オープンエーアイは2026年10月26日、社内の未公開モデルが3つの研究成果を生み出したと発表しました。分野は、計算機科学、数学、物理学の3つです。最も注目を集めたのは、計算機科学の成果です。具体的には、指数時間仮説、英語でイクスポネンシャル・タイム・ハイポセシスと呼ばれる予想を反証したという主張です。なお、モデルの名称は公表されていません。</p>
+<p>指数時間仮説は、1999年にカリフォルニア大学サンディエゴ校のラッセル・インパリアッツォ氏とラマモハン・パトゥリ氏らが提唱した予想です。内容は、論理式を満たす変数の組み合わせを探す問題、つまり充足可能性問題、とりわけ3サットと呼ばれる形式は、変数の数に対して指数関数的な時間がどうしても必要になる、というものです。この予想は、数百本の論文で前提として使われてきました。そのため、本当に反証されれば、多くの理論的な結果に見直しが及びます。</p>
+<h3 id="反証の中身">反証の中身</h3>
+<p>オープンエーアイによると、モデルは10月16日に自然言語で反証を導きました。翌日の17日には、証明支援系のリーンで形式化を終えたとしています。リーンとは、証明の各手順が正しいかを機械で検査するためのソフトウェアです。証明の資料は、ギットハブ上の公開リポジトリに掲載されています。</p>
+<p>報道によると、示されたアルゴリズムは、変数の数をエヌとしたとき、おおよそ2の「エヌを、ログエヌの平方根で割った値」乗の手順で動きます。これは、仮説が予想する指数関数的な下限より速い、いわゆる準指数時間です。ただし、オープンエーアイ自身も、実用的な高速化に結びつけるには相当な追加研究が必要だと述べています。また、この結果は、ピー対エヌピー問題の解決を意味するものではないと指摘されています。</p>
+<h3 id="数学と物理学の主張">数学と物理学の主張</h3>
+<p>残る2つの主張も規模の大きいものです。第一に、数学では、1991年にソッグ氏が提唱した局所平滑化予想を、すべての次元で証明したとしています。オープンエーアイは、これにより、掛谷予想とスタインの制限予想もすべての次元で解決されると主張しています。第二に、物理学では、純粋なヤン・ミルズ理論を含む、4次元の相互作用する場の量子論の存在証明を得たとしています。ヤン・ミルズ理論の存在問題は、クレイ数学研究所のミレニアム懸賞問題の一部です。</p>
+<h3 id="検証体制と注意点">検証体制と注意点</h3>
+<p>検証は外部の専門家に委ねられます。指数時間仮説については、提唱者であるインパリアッツォ氏とパトゥリ氏が率いるグループが、マサチューセッツ工科大学のライアン・ウィリアムズ氏とともに独立した検証を進めます。物理学の成果は、ノーベル賞受賞者のデビッド・グロス氏が率いるグループが検証します。オープンエーアイは、秘密保持契約を結ばないことや、学術上の功績を自社が求めないことを原則として掲げています。</p>
+<p>重要な注意点が2つあります。第一に、検証者たちは、自分たちの関与を、主張の正しさのお墨付きと受け取らないよう求めています。第二に、リーンが保証するのは、形式化された証明が論理的に正しいことだけです。形式化された命題が、論文の主張する内容と本当に一致しているかは、専門家が別に確かめる必要があります。したがって、2026年10月末の時点で、この反証は確定した結果ではなく、検証を待つ主張という位置づけです。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
