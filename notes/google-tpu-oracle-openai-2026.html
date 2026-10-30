@@ -1,0 +1,69 @@
+<title>Google TPU、Oracleのクラウドで提供へ OpenAIも購入計画と報道</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/google-tpu-oracle-openai-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Google TPU、Oracleのクラウドで提供へ OpenAIも購入計画と報道</h1>
+    <div class="doc">
+<p>このノートでは、グーグルの人工知能向け半導体であるティーピーユーが、グーグル以外の大手クラウドで初めて提供されることになった件を扱います。最初にオラクルとの提携の中身を説明します。次に、オープンエーアイがティーピーユーの購入を計画しているという報道を取り上げます。最後に、エヌビディアへの影響と、市場で出ている慎重な見方を整理します。</p>
+<h3 id="オラクルとグーグルの提携">オラクルとグーグルの提携</h3>
+<p>10月27日、オラクルはラスベガスで開いた自社イベント、オラクル・エーアイ・ワールドで、グーグルとの提携を発表しました。オラクルは2027年から、自社のクラウドでグーグルのティーピーユーを貸し出します。ティーピーユーとは、グーグルが人工知能の学習と推論のために独自に設計した専用チップのことです。これまでティーピーユーを使えるのは、基本的にグーグル自身のクラウドに限られていました。そのため、グーグル以外の大規模クラウド事業者が提供するのは、今回が初めてです。</p>
+<p>提携の仕組みは次の通りです。チップはオラクルのデータセンターに設置されます。電力、冷却、ネットワークはオラクルが用意します。チップの搬入は2027年に始まり、数年かけて規模を広げます。オラクルのクラウド部門の幹部であるカラン・バッタ氏は、この提携を「複数年、複数ギガワット規模のパートナーシップ」と表現しました。さらに、グーグルが新しい世代のティーピーユーを発表したその日に、オラクルも同じ世代を受け取れると説明しています。ただし、最初に何個のチップを導入するのかは明らかにされていません。</p>
+<p>対象となるのは、グーグルの第8世代ティーピーユーです。第8世代には2つの種類があります。1つ目は学習向けの「8ティー」、2つ目は推論向けの「8アイ」です。グーグルによると、8ティーは前の世代と比べて、ポッドと呼ばれるチップのまとまり1つあたりの計算性能がおよそ3倍になります。</p>
+<h3 id="オープンエーアイの購入計画">オープンエーアイの購入計画</h3>
+<p>同じ27日、米国の報道機関ジ・インフォメーションは、オープンエーアイがグーグルのティーピーユーを購入する計画だと報じました。オープンエーアイは2025年からティーピーユーを借りて使ってきました。今回の報道は、借りるだけでなく買う段階に進むという内容です。ただし、オープンエーアイもグーグルも、この購入を正式には認めていません。価格、数量、チップの世代、時期もすべて明らかになっていません。そのため、現時点では報道の段階にとどまります。</p>
+<p>重要なのは、この購入がエヌビディアの画像処理半導体、つまりジーピーユーの代わりではなく、追加として報じられている点です。オープンエーアイは、半導体大手ブロードコムと共同で設計した自社チップ「ハラペーニョ」も今年後半に導入する予定です。このハラペーニョも、オラクルのクラウドで動かされることになっています。つまりオープンエーアイは、エヌビディア、グーグル、自社チップの3つを組み合わせて計算資源を確保しようとしています。</p>
+<p>ティーピーユーの外部提供は、オラクルに限った動きでもありません。グーグルは投資会社ブラックストーンと組んで、ティーピーユー専用のクラウドを構築しています。また、新興のクラウド事業者フルイドスタックは、アンソロピック向けにティーピーユーを配備しています。アンソロピック自身も、アマゾン、グーグル、エヌビディア、エーエムディーという4系統のチップを使い分けていると、上場申請の書類で示しています。</p>
+<h3
+id="エヌビディアへの影響と慎重な見方">エヌビディアへの影響と慎重な見方</h3>
+<p>オラクルは同じイベントで、エヌビディアの最新システム「ヴェラ・ルービン」の提供開始も発表しました。このシステムの規模を数ギガワットまで広げる計画です。さらに、インテル、エーエムディー、セレブラスなど、ほかのチップ企業との取引も並べました。オラクルの幹部は、今回の提携はエヌビディア離れではないと説明しています。この幹部はエヌビディアのチップを「最良で、最も用途の広い」ものと評価しました。そのうえで、チップが不足している状況では、選択肢が複数あること自体が顧客にとって価値になると述べています。</p>
+<p>市場の受け止め方は分かれています。ある分析は、オープンエーアイによる少量の購入であれば、エヌビディアの業績への影響は小さいと指摘します。一方で、複数ギガワット規模の継続的な導入になれば、無視できない脅威になるとしています。また、英国のテクノロジー媒体ザ・レジスターは、今回の発表の多くを、大手人工知能企業どうしでお金を回し合う「循環的な支出」だと批判しました。多くの一般企業は、まだ人工知能投資の見返りを得られていないという指摘です。</p>
+<p>オラクルの株価は27日におよそ5パーセント上がりました。ただし、年初からはまだ30パーセント以上下落しています。投資家は、オラクルが巨額のデータセンター建設の資金をどう調達するのかを懸念しています。オラクルは近く投資家向け説明会を開く予定です。そこで2030年に向けた売上目標の裏付けを示せるかどうかが、次の焦点になります。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
