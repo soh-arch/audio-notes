@@ -1,0 +1,72 @@
+<title>Anthropic、S-1修正版で「AIによる自己加速の閾値に間もなく達する可能性」と開示</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/anthropic-rsi-threshold-warning-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Anthropic、S-1修正版で「AIによる自己加速の閾値に間もなく達する可能性」と開示</h1>
+    <div class="doc">
+<p>このノートでは、アンソロピックが上場申請書類の修正版に盛り込んだ、新たなリスク要因の記述を取り上げます。まず開示の中身を整理し、次にその前提となる社内の安全方針と数字を確認し、最後にこの記述の受け止め方をめぐる論点を述べます。</p>
+<h3 id="開示の中身">開示の中身</h3>
+<p>アンソロピックは2026年11月2日、ナスダック上場に向けた登録届出書、エスワンの修正版を提出しました。この修正版のリスク要因の項目に、新しい記述が加わりました。最初に報じたのはテッククランチです。</p>
+<p>記述の中心は次の一文です。将来のモデルに関する社内の見積もりによれば、同社は、責任あるスケーリング方針が定める「エーアイに起因する劇的な進歩の加速」という定義に、差し迫って該当する可能性があるというものです。この加速は、エーアイがエーアイ自身の開発を担うことで能力向上が急激に速まる状態を指し、一般には再帰的自己改善と呼ばれます。</p>
+<p>ただし、同社は現時点のモデルについて、この閾値を超えたと判定したものはないと明記しています。基礎となるデータの評価は継続中だとしています。</p>
+<p>さらに書類は、二つの注意点を付け加えています。第1に、同社は過去に、開発速度の大幅な加速を、それが起きた後になるまで識別できなかったことがあると認めています。第2に、将来も同様に、加速を事後になるまで識別できない可能性があるとしています。そのうえで、人間の監督なしにクロードに次世代の最先端モデルを完全に自律的に設計・構築させることは、安全にはできないと見込んでいると述べています。同社は、人間が最先端モデル開発の主導権を保つよう、責任あるスケーリング方針の改定を検討しているとしています。</p>
+<h3 id="前提となる安全方針と数字">前提となる安全方針と数字</h3>
+<p>責任あるスケーリング方針とは、モデルの能力が一定の水準に達した際に、追加の安全対策を義務づける同社の社内規程です。書類は、エーアイを使ってより高性能なエーアイを作ることは、相当な安全上のリスクになり得ると述べ、研究開発でのエーアイ利用はこの方針の対象だとしています。</p>
+<p>この閾値の定義は変化してきたと報じられています。分析サイトのビジネスモデルアナリストによれば、以前の版では「2018年から2024年までの2年分の進歩を1年に圧縮する」水準として表現されていました。その後、2026年7月の改定で、劇的な再帰的自己改善の始まりという形に絞り込まれたとされています。</p>
+<p>同じ分析によれば、アンソロピックは社内の研究開発の自動化度合いを示すデータを公開しています。具体的には、2026年5月時点で、社内のコードベースに取り込まれたコードの80パーセント超をクロードが書いていたとされます。2026年8月時点では、エーアイ研究開発の作業の26パーセントをクロードが主導しており、2月の1パーセント未満から急増したとされます。一方で、計測対象の作業のうち、完全に自律的に動いているものはまだないとされています。これらの数字は二次的な報道によるもので、算出方法の詳細は確認できていません。</p>
+<p>財務面では、研究開発費は2026年上半期に97億4000万ドルに達し、前年同期の18億5000万ドルから大きく増えたと報じられています。</p>
+<h3 id="受け止め方をめぐる論点">受け止め方をめぐる論点</h3>
+<p>この開示の受け止め方には、二つの見方があります。</p>
+<p>第1は、懐疑的な見方です。テッククランチは、エスワンが開示書類であると同時に投資家向けの売り込みの性格も持つと指摘しています。そのため、自己改善に近いという警告は、能力の高さを示す宣伝を兼ねているのではないか、という批判があると紹介しています。</p>
+<p>第2は、真剣に受け止めるべきだという見方です。テッククランチ自身は、同社が本当に閾値が近いと考えているなら、その統治のあり方を社会として考えるべきだとしています。また、上場書類で将来予測を述べることには法的責任が伴うため、「差し迫って」という言葉を軽々しく使ったとは考えにくい、という論者もいます。</p>
+<p>なお、「差し迫って」には具体的な時期は示されていません。また、書類は閾値と再帰的自己改善を別々の箇所で異なる言葉で表現しており、両者を同一の節目とみなすのは報道側の解釈だという指摘もあります。</p>
+<p>アンソロピックはナスダックへの上場を目指しており、報道では評価額は最大2兆ドルとも伝えられています。売上の急拡大とともに、こうした安全上の開示が投資家と規制当局にどう受け止められるかが、今後の焦点です。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
