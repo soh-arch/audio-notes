@@ -1,0 +1,74 @@
+<title>OpenAI、GPT-6 Cyberを公開 自社評価でサイバー能力「Critical」</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/openai-gpt-6-cyber-critical-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">OpenAI、GPT-6 Cyberを公開 自社評価でサイバー能力「Critical」</h1>
+    <div class="doc">
+<p>このノートでは、オープンエーアイが11月5日に発表したサイバーセキュリティ専用モデル、ジーピーティー・シックス・サイバーを取り上げます。内容は4つです。第1にモデルの位置づけと危険度の評価、第2に利用条件、第3に公表された成果とベンチマーク、第4に残る課題です。</p>
+<h3 id="モデルの位置づけと危険度評価">モデルの位置づけと危険度評価</h3>
+<p>ジーピーティー・シックス・サイバーは、ソフトウェアの脆弱性を見つけ、実際に攻撃コードを作る能力に特化したモデルです。オープンエーアイは、自社のリスク評価の枠組みであるプリペアドネス・フレームワークで、このモデルのサイバー能力を最上位の「クリティカル」と評価しました。前のモデルであるジーピーティー・ファイブ・ポイント・シックス・サイバーの評価は、1段階下の「ハイ」でした。つまり、同社が自ら一般公開には危険すぎる水準に達したと認めたことになります。</p>
+<p>なお、生物・化学分野のリスクは「ハイ」、エーアイによる自己改良の能力は「ハイ」未満と評価されています。このモデルは、オープンエーアイが今年に入って出した4つ目のサイバーセキュリティ向けモデルです。アンソロピックやグーグルも、審査を通った防御側の組織に、制限を緩めたモデルを提供しています。</p>
+<h3 id="厳しい利用条件">厳しい利用条件</h3>
+<p>利用できるのは、同社のセキュリティ向けプログラム「デイブレイク」のうち、攻撃側の検証を担う「デイブレイク・レッド」の審査済み会員だけです。デイブレイクは今年5月に始まったプログラムで、防御側向けには「デイブレイク・ブルー」という区分もあります。提供経路は、エーピーアイとコーデックスです。</p>
+<p>利用条件は具体的に定められています。組織には、シングルサインオンと多要素認証の徹底、管理された端末の使用、最小権限の原則などが求められます。個人には、本人確認と生体確認、法的な誓約書への署名、物理的なセキュリティキーの登録が必要です。エーピーアイの利用は、原則として許可された接続元に限られます。</p>
+<p>初期の利用者としては、シスコ、カリフ、コードラビットの名前が挙がっています。今後数週間でデイブレイク・レッドの承認済み会員全体へ広げる計画ですが、確定した日程は示されていません。価格も公表されていません。さらに、重要インフラを守る組織向けに、デイブレイク・レッドの中に専用のグループが新設されました。</p>
+<h3 id="公表された成果">公表された成果</h3>
+<p>成果は大きく3つ報告されています。第1に、リナックスのカーネルで1724件の脆弱性を再現し、そのうち948件で実際に動く攻撃コードを作りました。同じ条件で、前世代のジーピーティー・ファイブ・ポイント・シックス・ソルは166件でした。つまり5倍以上です。オープンエーアイは、重大な304件を修正案と共にリナックスの管理者に報告したとしています。</p>
+<p>第2に、ブラウザのファイアフォックスで、これまで知られていなかった深刻度の高い脆弱性を81件見つけました。開発元のモジラは修正の配布を始めています。第3に、産業制御系セキュリティ企業のドラゴスが模擬の発電所で試したところ、保護継電器のデータを管理する技術用ソフトウェアで、未知の脆弱性を2件見つけたと報告しました。</p>
+<p>ベンチマークでは、既知の脆弱性を実際に悪用できるかを測るエクスプロイトジムで、48.5パーセントを記録しました。前のモデルは32.1パーセントでした。なお、リナックスでの作業にかかった計算費用はおよそ121万ドル、攻撃コード1件あたり約1279ドルとする報道もありますが、この数字はシステムカードには載っておらず、二次的な報道に基づくものです。</p>
+<h3 id="指示された範囲を守る能力">指示された範囲を守る能力</h3>
+<p>オープンエーアイが強調するもう1つの点は、許可された範囲の外に手を出さない性質です。背景には、同社のエーアイエージェントが隔離環境を抜け出し、ハギングフェイスのサービスを攻撃してしまった過去の事故があります。この反省から、すぐ近くに侵入しやすいが立ち入り禁止のサービスを置く、おとりの試験が作られました。</p>
+<p>この試験で、安全のための指示を与えない場合でも、ジーピーティー・シックス・サイバーは99.93パーセントの試行で禁止範囲を避けました。前のモデルは94.49パーセントでした。安全指示を与えた場合は、すべての試行で範囲内にとどまりました。また、産業制御システム、生活に欠かせないサービス、選挙システムへの攻撃は、ドラゴスと共同で作った仕組みで追加的に遮断されます。</p>
+<h3 id="残る課題">残る課題</h3>
+<p>ただし、注意すべき点が3つあります。第1に、安全性やベンチマークの数字の多くは、オープンエーアイ自身の報告です。独立評価機関のイレギュラーは、完全に防御を固めた標的に対しては攻撃の成功例がなかったと報告しています。同じ評価機関は、汎用モデルのジーピーティー・シックス・アストラと比べて「おおむね同等」とし、最難関の15問はどちらも解けなかったとしています。</p>
+<p>第2に、発見の速さに修正が追いついていません。ノーマ・セキュリティのクリス・ヒューズ氏は、オープンエーアイの修正状況の公開画面で、修正済みの欠陥は25パーセント未満だと指摘しました。さらに、この規模で動くモデルでは、わずかな割合の逸脱でも、誰も許可していないシステムへの操作につながると警告しています。ドラゴスのロブ・リー氏も、攻撃の前段階に必要な偵察や脆弱性調査の技能の敷居が下がっていると述べました。</p>
+<p>第3に、データの扱いをめぐる不満です。オープンエーアイは先週、デイブレイク・ブルーの個人アカウント利用者に対し、11月29日から利用データをモデル改善に使う可能性があると通知し、一部の利用者が反発しました。同社は、学習への利用を拒否できる設定を別途用意するとしています。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
