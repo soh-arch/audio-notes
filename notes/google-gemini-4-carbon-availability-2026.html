@@ -1,0 +1,70 @@
+<title>Google、Gemini 4 Carbonを開発者と有料会員に一般公開</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/google-gemini-4-carbon-availability-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Google、Gemini 4 Carbonを開発者と有料会員に一般公開</h1>
+    <div class="doc">
+<p>この原稿では、グーグルが最上位モデル、ジェミニ・フォー・カーボンの提供範囲を大きく広げた件を扱います。内容は3つです。第1に、誰がどの価格で使えるようになったか。第2に、グーグルが示した性能と安全性の数値。第3に、外部評価と注意点です。</p>
+<h3 id="限定公開から一般提供へ">限定公開から一般提供へ</h3>
+<p>グーグルは2026年11月10日、ジェミニ・フォー・カーボンを開発者、企業、研究者、一般利用者に向けて公開しました。カーボンが発表されたのは10月28日です。ただし当初は、サイバー防御を担う一部の組織と、米国政府の事前テストに限られていました。開発者向けの公開時期も示されていませんでした。今回の公開は、その制限を約2週間で解いたことになります。</p>
+<p>提供先は4つの経路に分かれます。第1に、グーグル・エーアイ・スタジオとアンドロイド・スタジオを通じた、有料のエーピーアイです。第2に、企業向けのジェミニ・フォー・ビジネスです。第3に、最上位の個人向けプランであるグーグル・エーアイ・ウルトラの加入者です。加入者は、ジェミニのアプリ、検索のエーアイ・モード、そして開発環境のアンチグラビティで使えます。第4に、研究者向けの無料提供枠です。これは、もともと1万人の科学者に下位モデルのアルゴンを6か月間無料で提供していた枠で、カーボンにも広げられました。</p>
+<p>価格は導入価格として、入力100万トークンあたり2ドル、出力100万トークンあたり10ドルです。この導入価格は11月30日までです。その後は倍の、入力4ドル、出力20ドルになります。グーグルは、大半のソフトウェア開発や知的作業には引き続きアルゴンが適していると説明しています。つまりカーボンは、より多くのトークンを使って深く推論し、検証まで行う、難題向けの位置付けです。</p>
+<h3 id="新機能のスウォーム">新機能のスウォーム</h3>
+<p>開発環境のアンチグラビティでは、スウォームと呼ぶ機能が試験提供されています。1つの指示から、複数のエージェントによるチームを組む機能です。カーボンは設計や調整、監査の役を担います。一方で、より速い別のモデルが並行して実装やテストを進めます。大きなプロジェクトを、役割分担した複数のエージェントで進める仕組みです。</p>
+<h3 id="グーグルが示した性能">グーグルが示した性能</h3>
+<p>グーグルが強調するのは、サイバーセキュリティと長時間の作業です。脆弱性の発見を測るセック・ベンチ・プロでは88.2パーセントでした。脆弱性を実際に悪用できるかを測るエクスプロイト・ジムでは54.8パーセントでした。修正能力を測るシー・ダブリュー・イー・ベンチでは71.0パーセントでした。いずれもグーグルによれば首位です。</p>
+<p>さらにグーグルは、カーソル・ベンチやザピアの業務自動化ベンチマークなど3つで首位だったとしています。そのうえ、次点の外部モデルと比べて、1タスクあたりの費用が半分以下だったと説明しています。科学分野でも、たんぱく質の遠い類縁を見つける作業で、発見数が平均40倍に増えたという例を挙げています。</p>
+<h3 id="安全性の数値">安全性の数値</h3>
+<p>安全面では、前のモデルであるアルゴンとの比較が示されました。攻撃役のエージェントによる模擬サイバー攻撃では、1回あたりの突破率が、アルゴンの3.1パーセントから0.8パーセントに下がりました。外部のグレイ・スワンによる試験では、自動化されたサイバー攻撃の依頼が通る割合が、9.86パーセントから2.17パーセントに下がりました。また、外部のトラジェクトリー・ラボが132時間、1万3000件を超える依頼で試したところ、新たな汎用の脱獄手法は見つかりませんでした。脱獄とは、安全上の制限を回避させる手口のことです。</p>
+<h3 id="外部評価と注意点">外部評価と注意点</h3>
+<p>注意すべき点は、多くの数値がグーグル自身の発表だということです。独立した評価機関の結果は、まちまちです。アーティフィシャル・アナリシスの総合指標では、カーボンは59点で首位とされます。2位はクロード・オーパス・ファイブ・ポイント・ファイブの58点、3位はジーピーティー・シックス・アストラの57点で、差はわずかです。一方で、コーディング・エージェントとしての指標では、カーボンは59点でした。これはクロード・コードとオーパス・ファイブ・ポイント・ファイブの組み合わせの62点を3点下回ります。セミアナリシスの業務能力ベンチマークでも、カーボンは10.9パーセントで、オーパス・ファイブ・ポイント・ファイブの12.0パーセントにわずかに及びませんでした。</p>
+<p>また、カーボンは出力トークンが多い傾向があると複数の評価者が指摘しています。そのため、トークン単価だけでなく、1件の作業あたりの総費用で比べる必要があります。導入価格が11月30日に倍になる点も、費用を見積もるうえで重要です。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
