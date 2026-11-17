@@ -1,0 +1,68 @@
+<title>理研「富岳」に不正アクセス、最大4597人分の情報漏えいの可能性</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/riken-fugaku-unauthorized-access-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">理研「富岳」に不正アクセス、最大4597人分の情報漏えいの可能性</h1>
+    <div class="doc">
+<p>理化学研究所は2026年11月16日、スーパーコンピューター「富岳」の運用システムが不正アクセスを受けたと発表しました。この原稿では、発覚から運用停止までの経緯、漏えいした可能性のある情報、そして影響と今後の対応の3点を順に説明します。</p>
+<h3 id="発覚から運用停止までの経緯">発覚から運用停止までの経緯</h3>
+<p>理研の発表によれば、攻撃者は11月10日から13日にかけて、運用系の内部ネットワークに侵入していました。侵入の足がかりになったのは、富岳の稼働状況を表示するために外部に公開されていたウェブページ、いわゆるダッシュボードです。具体的な侵入の手口は、まだ調査中です。侵入後には複数のサーバーが不正に操作されました。一部のサーバーでは、不正なプログラムの設置などの改ざんも確認されています。</p>
+<p>時系列は次の通りです。12日、保守管理を委託している外部の事業者が不審な通信を検知し、理研とともに調査を始めました。13日の午後4時33分に不正アクセスを確認し、同じ日の夜には文部科学省に報告しています。14日の午前4時30分には富岳の運用を停止し、外部からのアクセスを遮断しました。15日の午後には利用者にメールで通知しました。同時に、実行中と待機中のすべての計算処理を止め、全利用者のログイン用の公開鍵を無効にしています。16日には個人情報保護委員会にも報告しました。</p>
+<h3 id="漏えいした可能性のある情報">漏えいした可能性のある情報</h3>
+<p>漏えいの可能性がある情報は、大きく2種類あります。</p>
+<p>1つ目は、利用者の認証システムに登録された情報で、最大4597人分です。内訳は、富岳の利用者が最大4222人分で、氏名、メールアドレス、利用者アイディーが含まれます。もう1つは、理研の別のスーパーコンピューターである「理究」の利用者で、最大375人分の氏名とメールアドレスです。</p>
+<p>2つ目は、利用者がそれぞれ使うホームディレクトリと呼ばれる保存領域に置かれていたファイルの一部です。ここには、理研の外にあるスーパーコンピューターやクラウドサービスに接続するための認証情報が含まれていた可能性があります。具体的には、エスエスエイチの秘密鍵、つまり遠隔のコンピューターに安全にログインするための鍵や、アクセスキーです。利用者の研究データも、持ち出された可能性のある対象に含まれます。</p>
+<p>ただし、研究成果が外部に流出した具体的な証拠は、発表の時点では確認されていません。ファイルに第三者の個人情報が含まれていたかどうかも、確認が続いています。</p>
+<h3 id="影響と今後の対応">影響と今後の対応</h3>
+<p>この事案で特に重いのは、被害が富岳の外に広がるおそれがある点です。理研によれば、侵入者は入手した認証情報の一部を使って、ほかのシステムへの接続を試みたことが確認されています。富岳は全国の大学や研究機関が共同で使う計算基盤の中核です。そのため、盗まれた鍵が使われれば、連携する他のスーパーコンピューターや外部サービスにも被害が及びかねません。二次被害の有無は、関係機関と連携して調べています。</p>
+<p>理研は利用者に対し、富岳に保存していた秘密鍵などの認証情報を、接続先のサービスで無効にしたうえで再発行するよう求めています。また、富岳や理研を装った不審なメールへの注意も呼びかけています。理研は、メールでパスワードなどを尋ねることはないとしています。</p>
+<p>今後について理研は、影響範囲と原因の調査を終えたうえで、悪用されたソフトウェアの脆弱性の修正、侵入されたサーバーの再構築、ネットワーク構成の見直しを進めるとしています。エーアイを活用したセキュリティ対策も追加する方針です。富岳の運用は、これらの対策が整ってから再開するとしており、再開の時期は決まっていません。文部科学省は理研に対し、事実関係の究明と被害の確認を求めています。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
