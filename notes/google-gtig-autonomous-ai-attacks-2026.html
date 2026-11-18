@@ -1,0 +1,76 @@
+<title>Google、AIエージェントが人手を介さず脆弱性を突く攻撃を初確認</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/google-gtig-autonomous-ai-attacks-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Google、AIエージェントが人手を介さず脆弱性を突く攻撃を初確認</h1>
+    <div class="doc">
+<p>グーグルの脅威インテリジェンス部門が、エーアイエージェントが人間の指示なしに脆弱性の発見から攻撃までを実行した事例を、初めて確認したと発表しました。この原稿では、報告の中心となる攻撃事例、ほかに報告された悪用の手口、攻撃の増え方を示す数字、そして防御側への影響の4点を順に説明します。</p>
+<h3 id="報告の概要">報告の概要</h3>
+<p>報告を出したのは、グーグル脅威インテリジェンスグループと、同社傘下のセキュリティ企業マンディアントです。11月16日に公表された「エーアイ脅威トラッカー」の最新版で、題名は「エージェント型の脅威活動が重要な閾値を越えた」というものです。約2か月前の前回版では、完全に自律した攻撃の仕組みは実際の攻撃ではまだ確認されていない、と書かれていました。つまり、この2か月で状況が変わったことになります。</p>
+<h3
+id="中心となった事例エクスプロイトエージェント">中心となった事例、エクスプロイト・エージェント</h3>
+<p>報告の中心は、エクスプロイト・エージェントと名付けられた攻撃用の仕組みです。この仕組みは、ソフトウェアのセキュリティ修正、つまりパッチを読み込みます。そして、修正の前と後のコードを比べて、どこに欠陥があったのかを推定します。続いて、その欠陥を突く攻撃コードを書き、実際に実行します。この一連の流れに人間は関与していません。</p>
+<p>エクスプロイト・エージェントは、最先端の商用モデルと、手元のサーバーで動かすモデルの両方をつないで使っていました。グーグルはこの仕組みを、外部から見える状態になっていた試験用サーバー上で見つけました。設定ファイルには、エーピーアイキーの入力場所を説明するロシア語のコメントが残っていました。ただし、グーグルは攻撃者の組織や国を特定していません。被害の状況からは、フランスのメディア、エンターテインメント、教育関連のウェブサイトが主な標的だったとみられています。</p>
+<p>もう1つの事例として、公開されたばかりの脆弱性を突いた攻撃者が、最初の侵入からわずか数分で、組織全体を管理するドメイン管理者の権限を奪ったケースも報告されています。</p>
+<h3 id="名前が挙がった攻撃ツール">名前が挙がった攻撃ツール</h3>
+<p>報告では、オープンソースのツールも名前が挙がっています。ケルンと、改造されたペンタジーアイは、本来は侵入テスト用のエージェント型ツールです。これらは実際の攻撃で、侵入の一部の段階を自動化するのに使われていました。一方、サイバーストライクエーアイとヘックスストライクエーアイは、攻撃者が試していたことは確認されたものの、実際の攻撃での使用は確認されていません。なお、グーグルは、これらのツールの利用者がすべて悪意を持っているわけではない、とも明記しています。</p>
+<h3 id="そのほかの悪用の手口">そのほかの悪用の手口</h3>
+<p>報告は、自律攻撃以外にも3つの手口を挙げています。</p>
+<p>1つ目は、エルエルエムジャッキングと呼ばれる手口です。これは、盗んだ認証情報などを使って、他人のエーアイサービスや計算資源を勝手に使うものです。被害額は1日で10万ドルを超える例があり、最も深刻な例では、止められるまでに100万ドルに達しました。</p>
+<p>2つ目は、エーアイコーディングアシスタントの設定ファイルを書き換える攻撃です。北朝鮮系と疑われるミッドナイト・ネプチューンというグループが、暗号資産関連企業の社内リポジトリで、クロード・コードの設定ファイルを書き換えていました。その結果、開発者がリポジトリを開くと、ソンバーミームというバックドアが自動的にダウンロードされる仕組みになっていました。同じグループは、偽のリクルーターのプロフィールも使っていました。そのプロフィール写真には、グーグルのエーアイ生成画像を示す電子透かし、シンスアイディーが含まれていました。</p>
+<p>3つ目は、影響工作です。グーグルは、ジェミニのエーピーアイの不正利用に関わるアカウントを停止しました。その中には、10万以上のソーシャルメディアのアカウントを管理する請負業者のプラットフォームや、欧州と中東を狙った影響工作のプラットフォームが含まれていました。</p>
+<h3 id="攻撃の増え方を示す数字">攻撃の増え方を示す数字</h3>
+<p>背景には、攻撃全体の急増があります。脆弱性の公開と、それを突く攻撃の件数は、2026年の1月から8月までの間にほぼ倍増しました。一方、修正が出る前の脆弱性を突くゼロデイ攻撃の伸びはより緩やかです。具体的には、2025年の月平均8件から、2026年には月平均11件になりました。ただし、8月だけは22件に跳ね上がりました。</p>
+<p>ここで重要なのは、エーアイが主に縮めているのは、パッチの公開から実際の攻撃までの時間だという点です。グーグルの主任アナリスト、ジョン・ハルトクイスト氏は、攻撃者はゼロデイを必要としていない、と述べています。そして、この技術を使えば、ゼロデイを探すよりもパッチを解析する方がはるかに簡単だ、と説明しています。つまり、修正済みだがまだ適用されていない脆弱性、いわゆるエヌデイ脆弱性の危険が高まっているということです。</p>
+<h3 id="限界と防御側への影響">限界と防御側への影響</h3>
+<p>一方で、現在の自律攻撃には限界もあります。グーグルによると、こうしたツールの多くは、隠密性よりも速度を優先しています。そのため、通信やコードに明確な痕跡が残り、防御側が検知しやすい状態です。また、エーアイが書いた攻撃コードは、実際には動かないこともあります。</p>
+<p>防御側への提言としては、4点が挙げられています。第1に、パッチを適用するまでの期間を短くすること。第2に、エーアイが生成した攻撃コードが本当に機能するかを検証すること。第3に、エーアイのエーピーアイキーとクラウドの利用枠を守ること。第4に、エーアイコーディングアシスタントの設定ファイルに不審なコマンドがないかを点検することです。ハルトクイスト氏は、企業は近い将来、パッチを適用する周期を早めるよう強い圧力を受けることになる、と述べています。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
