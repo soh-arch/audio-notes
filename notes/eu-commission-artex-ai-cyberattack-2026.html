@@ -1,0 +1,68 @@
+<title>欧州委員会にAIツール「ARTEX」使った攻撃、人事システムが10日以上停止</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/eu-commission-artex-ai-cyberattack-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">欧州委員会にAIツール「ARTEX」使った攻撃、人事システムが10日以上停止</h1>
+    <div class="doc">
+<h3 id="概要">概要</h3>
+<p>欧州委員会は2026年11月19日、職員向けの人事システムがサイバー攻撃を受け、10日以上にわたって混乱したことを認めました。攻撃者は、人工知能を使って侵入作業を自動化するツールを使っていたとみられます。ここでは、被害の内容、使われたツール、公表の経緯、そして今後の焦点の4点を順に整理します。</p>
+<h3 id="被害の内容">被害の内容</h3>
+<p>まず被害です。欧州委員会によると、攻撃の最初の兆候は10月22日に検知されました。その後、職員の人事関連システムが10日以上にわたって混乱しました。具体的には、給与の支払い、休暇の申請、医療費の払い戻し、そして翻訳サービスが影響を受けました。欧州委員会は予防措置として、いくつかのサービスをオフラインにしたと説明していますが、どのサービスかは明らかにしていません。</p>
+<h3 id="使われたツールアーテックス">使われたツール「アーテックス」</h3>
+<p>次に、攻撃に使われたツールです。欧州連合の機関を守る専門チームであるサートイーユーは、攻撃者が「アーテックス」というツールを使ったと特定しました。アーテックスは、2026年7月に公開されたオープンソースの攻撃検証用ツールです。本来は、企業や組織が自らの弱点を調べるための侵入テストに使われます。仕組みとしては、市販のエーアイモデルを組み込み、脆弱性の発見から悪用までを自動で進めます。</p>
+<p>一方で、このツールは悪用も広がっています。アメリカ連邦捜査局、エフビーアイは、報道の前の週に警告を出しました。その警告によると、アーテックスは犯罪集団と国家系のハッカー集団の両方に使われています。さらに一部の侵入事例では、最初の標的選定から管理者権限の奪取まで3時間もかかっていませんでした。また、インターネット上に公開状態のアーテックスの操作画面が、11月9日時点で1465件あったとする調査があります。別の報道では1600件を超えるとされており、数字は情報源によって異なります。</p>
+<p>ただし、重要な点があります。アーテックスが侵入そのものに使われたのか、それとも脆弱性を探す段階だけで使われたのかは、まだはっきりしていません。欧州委員会の報道官、トーマス・レニエ氏は、今回の攻撃を「エーアイが生成したサイバー攻撃」と表現しました。しかし、攻撃者の正体や動機は明らかにしていません。</p>
+<h3 id="公表の経緯">公表の経緯</h3>
+<p>3つ目は公表の経緯です。攻撃は10月22日に検知され、26日には内部で確認されていました。しかし、欧州委員会が公に説明したのは、ポリティコが最初に報じた後の11月19日の記者会見でした。その前日の18日には、デジタル担当の執行副委員長、ヘンナ・ビルックネン氏が、委員全員に状況を報告しています。公表の遅れについて、レニエ報道官は「防御の手の内を明かせば対策が損なわれかねない」と説明し、「隠していたわけでは全くない」と述べました。</p>
+<h3 id="データ流出と今後の焦点">データ流出と今後の焦点</h3>
+<p>最後に、データ流出の有無と今後の焦点です。欧州委員会は、職員全体に及ぶようなデータ流出の証拠は見つかっていないとしています。また、身代金の要求も把握していないと説明しています。影響を受けた職員には通知が済んでおり、ほかのシステムも予防的に点検中です。調査は継続しており、サートイーユーと欧州データ保護監察機関が協力しています。ただし、一部の報道は、職員のデータが盗まれたかどうかを捜査当局がなお評価中だと伝えており、流出の有無は確定していません。</p>
+<p>今回の件は、欧州委員会にとって2026年に公表された3件目のサイバー被害です。1月にはアイバンティ社のソフトウェアを経由した侵入、3月にはクラウド基盤への侵入がありました。当局は、3件の関連性を示していません。セキュリティ企業センチネルワンのショーン・ウィリアムズ氏は、核心は別の点にあると指摘します。それは、アーテックスのようなエーアイを使ったツールによって、攻撃者がインターネットに接続された機器の弱点を、より速く、より安く、より少ない技能で突けるようになったことです。11月中旬には、グーグルも、エーアイエージェントが人手を介さずに脆弱性を突く攻撃を初めて確認したと発表しています。攻撃の自動化が、実際の行政機関の業務停止という形で表面化した事例と言えます。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
