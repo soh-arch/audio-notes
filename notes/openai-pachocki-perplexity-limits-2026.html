@@ -1,0 +1,70 @@
+<title>OpenAIのPachocki氏、perplexityに基づく業界共通の開発上限を提案</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/openai-pachocki-perplexity-limits-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">OpenAIのPachocki氏、perplexityに基づく業界共通の開発上限を提案</h1>
+    <div class="doc">
+<h3 id="概要">概要</h3>
+<p>オープンエーアイのチーフサイエンティストであるヤクブ・パホツキ氏は、11月22日、パープレキシティと知能と題したエッセイを公開しました。この中でパホツキ氏は、最先端の人工知能を開発する各社が、共通の上限を設けて、それを超えないと約束するよう提案しています。この原稿では、4つの点を扱います。第1に、基準として使う指標です。第2に、オープンエーアイが初めて公開した社内の数値です。第3に、提案の中身です。第4に、反応と限界です。</p>
+<h3 id="指標としてのパープレキシティ">指標としてのパープレキシティ</h3>
+<p>提案の土台となるのは、パープレキシティという指標です。パープレキシティとは、モデルが次に来る文章の断片をどれだけ正確に予測できるかを示す値で、値が低いほど予測が鋭いことを意味します。パホツキ氏は、これに近い指標である対数パープレキシティを用いています。オープンエーアイは、ジーピーティー3.5の時代からこの値を社内で追跡してきました。パホツキ氏は、この指標がほかのどのベンチマークよりも長く有用な信号であり続けてきたと主張し、業界の共通の物差しにすべきだとしています。</p>
+<h3 id="初めて公開された社内の数値">初めて公開された社内の数値</h3>
+<p>オープンエーアイは、今回初めて、自社モデルの対数パープレキシティを公開しました。報道によると、数値と能力の関係は次のとおりです。まず、ジーピーティー3.5は約0.99で、初代のチャットジーピーティーを支えるだけの流暢さを持っていました。次に、ジーピーティー4は約0.91で、段階的に考える推論を安定してこなせるようになり、現在の推論モデルにつながりました。</p>
+<p>さらに、値が0.8を下回ったあたりから、サイバーセキュリティと数学の能力が大きく跳ね上がったとされています。その到達点が、ジーピーティー6アストラです。また、約0.76の社内モデルは、長年未解決だった数学の問題を次々と解き始めたといいます。</p>
+<p>重要な点は、パホツキ氏自身が、これらの能力の飛躍はどれも事前には予測できなかったと認めていることです。そのうえでパホツキ氏は、次の大きな飛躍が約0.68から0.70の付近で起きると見ています。ただし、これは予測であり、上限の提案ではありません。</p>
+<h3 id="提案の中身">提案の中身</h3>
+<p>パホツキ氏が警戒しているのは、人工知能の研究そのものに飛躍が起きることです。早ければ2027年にも、事前学習の進歩が人間の研究者ではなく人工知能自身によってもたらされるようになる可能性があると述べています。その場合、監視や制御の手段が追いつかなくなるおそれがあります。</p>
+<p>そこで、提案には3つの柱があります。第1に、パープレキシティなどの測定値に基づく共通の上限を設け、各社がそれを超えないと約束することです。第2に、その上限を超えるのは、モデルの振る舞いへの理解が深まり、監視の道具が整ってからにすることです。監視の道具の例として、モデルの思考過程を監視する現在の仕組みの後継となる技術が挙げられています。第3に、評価方法の共通化、公開前の安全性の検証、透明性の基準について、各社が共通の規範を作ることです。</p>
+<p>パホツキ氏は、数値の公開によって競合他社にオープンエーアイの位置が見えてしまうことを認めています。それでも、業界全体で安全基準を作る緊急性のほうが上回ると説明しています。</p>
+<h3 id="反応と限界">反応と限界</h3>
+<p>サム・アルトマン最高経営責任者は、このエッセイを、オープンエーアイが最近公開したものの中で最も重要だと評価しました。また、業界として共通の上限に合意できることを望むと述べています。この主張は、2026年半ばから続く開発速度の調整をめぐる議論の延長線上にあります。アンソロピックのダリオ・アモデイ氏も、同様の議論を進めてきました。</p>
+<p>一方で、提案には大きな空白があります。第1に、最初の上限をどの値に置き、いつから適用するのかが示されていません。第2に、各社は学習に使うデータが異なるため、パープレキシティの値を会社間でそのまま比べることはできません。これはパホツキ氏自身も認めている点です。第3に、この指標は事前学習以外での能力向上、たとえば推論の工夫による向上を捉えられません。さらに、公開された数値は、オープンエーアイが公開していない社内データで測定されたもので、外部からは検証できません。他の開発企業がこの枠組みに加わるかどうかも、現時点では分かっていません。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
