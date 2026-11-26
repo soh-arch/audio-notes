@@ -1,0 +1,70 @@
+<title>GPT-6のタンパク質設計、ラボで5標的への結合を確認</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/gpt6-protein-design-lab-binding-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">GPT-6のタンパク質設計、ラボで5標的への結合を確認</h1>
+    <div class="doc">
+<h3 id="このノートの内容">このノートの内容</h3>
+<p>オープンエーアイが2026年11月24日に公表した、ジーピーティー6シリーズによるタンパク質設計の報告を扱います。取り上げる論点は3つです。第1に、何がどこまで実証されたのか。第2に、計算上のベンチマークで専門モデルとどう比較されたのか。第3に、オープンエーアイ自身が認めている限界と、バイオセキュリティ上の留保です。</p>
+<h3 id="何が報告されたのか">何が報告されたのか</h3>
+<p>オープンエーアイは、ジーピーティー6シリーズが汎用の推論とコード生成だけでタンパク質の立体構造とアミノ酸配列を設計できたと報告しました。重要な点は、設計そのものに生物学専用のモデルを呼び出していないことです。プレプリント、つまり査読前の論文の題名は、ジーピーティー6はタンパク質生物学の汎用基盤モデルである、という趣旨のものです。ラボ実験に使われたのは、ジーピーティー6.2のプレリリース版と、社内の未公開研究モデルです。</p>
+<p>実験は、オナバという企業がタンパク質を実際に合成し、結合を測定する形で行われました。中心となる実験は、ミニバインダーと呼ばれる小さな結合タンパク質を5つの標的に対して設計したものです。合成して試験した322個のうち、35個が結合を示しました。率にして10.9%です。標的ごとの内訳は、ピーディーエルワンが5個、アイエルセブンアールアルファが3個、ティーアールケーエーが1個、ブイイージーエフエーが8個、アイエルセブンティーンエーが18個で、5つの標的すべてで少なくとも1個の成功例が出ました。</p>
+<p>実験はこれだけではありません。既知の立体構造に対して配列だけを設計し直した試験では、エムディーエムツーで88個中75個、率にして85%が結合しました。ブイイージーエフエーでは42個中26個、62%です。一方でピーディーワンでは59個中8個、14%にとどまりました。未公開の立体構造に対する配列設計では107個中14個、13.1%でした。さらに抗体の可変領域のループを設計し直した試験では、アイエルフォーアールアルファ向けで182個中128個、70%が結合しました。既存の治療用抗体5種のループを置き換えた試験では、272個の断片のうち179個、66%が結合を保ちました。</p>
+<h3 id="計算上のベンチマークでの比較">計算上のベンチマークでの比較</h3>
+<p>計算上の評価では、14種類のタンパク質関連タスクの多くで、専門モデルと同等か上回ったと報告されています。具体的な数字を挙げます。モチーフ足場設計の30課題では、社内モデルの成功率が43.7%で、専門モデルのアールエフディフュージョンの27.8%を上回りました。ただしこの数値は暫定値とされています。折りたたみ構造の設計200課題では、社内モデルが18.9%、専門モデルのプロテイナが17.1%でした。</p>
+<p>低分子のドッキング、つまり薬の候補分子がタンパク質のどこにどう嵌まるかの予測では、差が大きく出ました。ポーズバスターズという評価基準で、ジーピーティー6.2が93%、社内モデルが96%に対し、専門モデルのディフドックエルは50%でした。抗体と標的のドッキングの平均スコアは、ジーピーティー5.6が約0.05、ジーピーティー6が0.28、ジーピーティー6.2が0.57、社内モデルが0.81と、世代ごとに上がっています。変異の影響を順位付けする課題でも同様の上昇が見られ、相関係数はジーピーティー5.6が0.41から社内モデルの0.66まで改善しました。</p>
+<p>その一方で、明確に弱い領域があります。タンパク質全体の立体構造予測です。予測構造の一致度を示すティーエムスコアの平均は、ジーピーティー6.2が0.26、社内モデルが0.38でした。専門モデルのイーエスエムフォールド2は0.93です。したがって、能力は一様に高いのではなく、課題によって大きく凹凸があります。オープンエーアイはこれをジャギッド、つまりぎざぎざした能力分布だと表現しています。</p>
+<h3
+id="限界とバイオセキュリティ上の留保">限界とバイオセキュリティ上の留保</h3>
+<p>オープンエーアイ自身が挙げている限界は複数あります。最も重要なのは、ラボに回す候補を絞り込む段階で、ボルツ2やオープンディーディーイー、イーエスエムフォールド2といった専門モデルを使っている点です。報告はこの点について、自社モデルがミニバインダーを端から端まで単独で生成できることを示すものではないと明記しています。つまり、完全に自律した設計が実証されたわけではありません。</p>
+<p>数値の解釈にも留保があります。ミニバインダーの成功率10.9%について、オープンエーアイは、候補をどれだけ厳しく絞り込むか、また結合をどう定義するかに大きく依存すると述べています。元となったアールエフディフュージョンの研究はより高い成功率を報告していました。配列設計の一部の結果は、学習データの記憶やベンチマークの作り方による影響を含む可能性があるとも認めています。抗体のドッキング試験に使った構造は公開済みで、類似の組み合わせを学習時に見ていた可能性があります。</p>
+<p>さらに根本的な留保があります。結合は創薬の最初の一歩にすぎません。特異性、安定性、生物学的な活性、安全性、有効性は、いずれも今回の試験では検証されていません。バイオセキュリティについては、医薬品の設計に役立つ能力は悪用も可能だとオープンエーアイが明示し、リスク評価と安全対策は同社のプリペアードネス・フレームワークの下で実施しているとしています。次の段階として挙げられているのは、より難しい標的へのミニバインダー設計、がん細胞を殺せるかといった結合後の作用の検証、そして複数標的に結合する分子やアールエヌエー、低分子への拡張です。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
