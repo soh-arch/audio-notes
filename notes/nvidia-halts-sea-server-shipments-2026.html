@@ -1,0 +1,70 @@
+<title>Nvidia、東南アジア4か国へのAIサーバー出荷を停止</title>
+<link rel="icon" type="image/svg+xml" href="../icon-v2.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-v2-32.png">
+<link rel="apple-touch-icon" href="../icon-v2-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#EDEFEF; --surface:#FFFFFF; --surface-2:#F5F6F6;
+    --ink:#1B1F23; --ink-soft:#4B5259; --ink-faint:#818A8E;
+    --accent:#2C5F63; --accent-ink:#0F3A3D; --rule:#D7DAD9;
+    --shadow: 0 1px 2px rgba(20,24,25,0.04), 0 8px 24px -12px rgba(20,24,25,0.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+      --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+      --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181A; --surface:#1C2225; --surface-2:#20282B;
+    --ink:#E8EAEA; --ink-soft:#ABB3B6; --ink-faint:#6E787B;
+    --accent:#6FBFC2; --accent-ink:#CDEEEF; --rule:#2A3134;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+  }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:"Zen Kaku Gothic New",sans-serif; -webkit-font-smoothing:antialiased; }
+  .shell{ max-width:720px; margin:0 auto; padding:36px 20px 96px; }
+  .kicker{ font-size:12px; color:var(--ink-faint); letter-spacing:.04em; margin-bottom:10px; }
+  .kicker a{ color:var(--ink-faint); }
+  article.paper{
+    background:var(--surface); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:var(--shadow); padding:44px clamp(20px,6vw,64px) 56px;
+  }
+  h1.title{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:30px; text-wrap:balance;
+    margin:0 0 26px; padding-bottom:18px; border-bottom:2px solid var(--accent); }
+  .doc{ font-family:"Noto Serif JP","Shippori Mincho",serif; font-size:17px; line-height:2; color:var(--ink); }
+  .doc h3{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:19px; color:var(--accent-ink);
+    margin:38px 0 14px; text-wrap:balance; }
+  .doc h3:first-child{ margin-top:0; }
+  .doc p{ margin:0 0 22px; }
+  footer{ text-align:center; font-size:11.5px; color:var(--ink-faint); padding-top:22px; }
+  footer a{ color:var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <p class="kicker">soh-arch/audio-notes · <a href="https://github.com/soh-arch/audio-notes/blob/main/nvidia-halts-sea-server-shipments-2026.md">GitHubで開く</a></p>
+  <article class="paper">
+    <h1 class="title">Nvidia、東南アジア4か国へのAIサーバー出荷を停止</h1>
+    <div class="doc">
+<p>この原稿では、エヌビディアがマレーシア、シンガポール、タイ、インドネシアの4か国へのエーアイサーバーの出荷を止めた件を扱います。順に、何が起きたか、その原因となった米国の新しい規制、エヌビディアにとっての重み、そして各国の反応を説明します。</p>
+<h3 id="何が起きたか">何が起きたか</h3>
+<p>フィナンシャル・タイムズは11月26日、エヌビディアが製造パートナーに対し、自社のエーアイチップを載せたサーバーの4か国向け出荷を止めるよう求めたと報じました。対象は、マレーシア、シンガポール、タイ、インドネシアです。報道によると、サーバーメーカーのデルとスーパーマイクロは、これらの国の顧客に対し、エヌビディアが注文を承認しないと伝えました。</p>
+<p>停止がいつまで続くかは分かっていません。関係者によると、エヌビディアとパートナーが米国の新しい輸出規制にどう従うかを確かめるまでの一時的な措置なのかどうかも、はっきりしていません。また、停止の範囲が一部のサーバー製品に限られるのか、より広いのかについても、報道によって書き方が分かれています。エヌビディア、デル、スーパーマイクロの3社は、すぐにはコメントに応じていません。</p>
+<h3 id="原因となった米国の規制">原因となった米国の規制</h3>
+<p>出荷停止のきっかけは、米国商務省の暫定規則です。この規則は11月19日に発効しました。インドネシア、マレーシア、シンガポール、タイ、ブラジルの5か国に先端エーアイチップを送るには、米国の許可が必要になります。</p>
+<p>米国の狙いは、中国企業による抜け道をふさぐことです。抜け道は2つあるとされています。1つ目は、機器をこの地域経由で中国へ流す方法です。2つ目は、この地域のデータセンターから計算能力を借りる方法です。東南アジアの4か国は、米国が制限するエヌビディアの最先端チップを求める中国のエーアイ開発者にとって、好まれる行き先になっていました。</p>
+<p>ただし、規則の運用はまだ固まっていません。あるクラウド事業者の幹部はフィナンシャル・タイムズに対し、「実行についての指針がない」と述べました。この幹部は、90日の期限が迫る中で誰も許可の申請方法を知らないとして、地域は「まったくの混乱」にあると語っています。</p>
+<h3 id="エヌビディアにとっての重み">エヌビディアにとっての重み</h3>
+<p>東南アジアは、エヌビディアにとって重要な収益源です。フィナンシャル・タイムズが引用した会社の決算書類によると、エヌビディアのシンガポール子会社の2025年の売上高は1040億ドルでした。これは前の年より72パーセントの増加です。ただし、この子会社には、台湾や中国の売上の一部も計上されています。そのため、1040億ドルがすべてシンガポール国内の需要というわけではありません。</p>
+<p>一方で、アナリストの中には、止まった出荷量はエヌビディアの世界全体のサーバー事業から見れば小さく、売上への直接の打撃は限られるとの見方もあります。とはいえ、急拡大してきたこの地域のデータセンター産業そのものには、大きな逆風になります。</p>
+<h3 id="各国の反応と関連する動き">各国の反応と関連する動き</h3>
+<p>マレーシアの貿易相は、国内のデータセンター事業者に米国の規則に従うよう指示しました。マレーシアの税関は、今年に入ってクアラルンプールの空港でエーアイサーバーを押収したこともあります。一方で、シンガポールは、自国の企業が先端チップを買い続けられる信頼できる経路を求めると表明しています。</p>
+<p>関連する動きとして、シンガポールのクラウド企業メガスピードがあります。メガスピードは、チップを中国へ横流しした疑いで米国の刑事捜査を受けています。メガスピード側は、不正を否定しています。また、一部の報道によると、商務省は、メガスピードとマレーシアやタイの関連会社を、輸出を厳しく制限する企業の一覧であるエンティティリストに加える動きを見せています。</p>
+<p>この件は、エヌビディアの経営をめぐる混乱とも重なっています。エヌビディアでは、いったん辞任したジェンスン・フアン氏が最高経営責任者に復帰したばかりです。フアン氏はこれまで、中国への販売を認めれば、中国の米国技術への依存を保てると主張してきました。今回の出荷停止は、米国政府がその考えとは逆の方向で、中国への経路を締め付けていることを示しています。</p>
+    </div>
+  </article>
+  <footer>このページは静的HTMLとして生成されています。</footer>
+</div>
